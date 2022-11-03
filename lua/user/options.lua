@@ -1,8 +1,8 @@
 local options = {
   backup = false,                          -- creates a backup file
-  -- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  cmdheight = 1,                           -- more space in the neovim command line for displaying messages
+  completeopt = { "menuone", "noselect" }, -- For completion: always show menu even for one and do not select any match
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
@@ -32,15 +32,21 @@ local options = {
   wrap = true,                             -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
+  virtualedit = "block",                   -- Allow the cursor to go anywhere in visual block mode.
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
-vim.opt.shortmess:append "c"
+-- Appendings to existing options
+vim.opt.cino:append("(0")-- Easy indent arguments on parenthesis with == see help cinoptions-values , TODO: Make specific to C Language
+-- vim.opt.shortmess:append("c") -- Shorten messages given by completion menus
+
+-- Replace characters with others
+vim.opt.listchars:append({tab= '>-', trail='␠', nbsp= '⎵'}) 
+vim.opt.list = true
 
 for k, v in pairs(options) do
-  vim.opt[k] = v
+vim.opt[k] = v  
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd "set whichwrap+=<,>,[,],h,l" -- TODO Do i need this
+vim.cmd [[set iskeyword+=-]] -- TODO Do i need this
