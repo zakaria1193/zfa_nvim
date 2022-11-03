@@ -1,3 +1,5 @@
+-- Setup of the cmp plugin for autocompletion
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
@@ -105,15 +107,18 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        -- Add new sources to this
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
+    -- Order is important = Order it is shown
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    -- Add new sources to this
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -125,7 +130,8 @@ cmp.setup {
     },
   },
   experimental = {
-    ghost_text = false,
-    native_menu = false,
+    ghost_text = false, -- Very bad
+    native_menu = false
   },
 }
+
