@@ -85,10 +85,15 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 
 	-- Treesitter
+  -- Helps nvim deeper understanding of the code
+  -- makes autindent, highlight, autoparing parenthesis ..
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		commit = "518e27589c0463af15463c9d675c65e464efc2fe",
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	})
+  -- make parenthesis in rainbows to tell matching easily
+  use({"p00f/nvim-ts-rainbow"})
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
