@@ -4,3 +4,5 @@ if not status_ok then
 end
 
 impatient.enable_profile()
+
+-- Profile result can be seen using :LuaCacheProfile
