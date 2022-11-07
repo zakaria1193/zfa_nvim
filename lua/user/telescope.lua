@@ -8,7 +8,7 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
+    prompt_prefix = "> ",
     selection_caret = " ",
     path_display = { "smart" },
 
@@ -21,6 +21,7 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
 
         ["<C-c>"] = actions.close,
+        ["<esc>"] = actions.close,
 
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
@@ -44,6 +45,8 @@ telescope.setup {
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
 
+      -- NORMAL mode is not accessible following zfa's change of using esc = actions.close in insert mode
+      -- normal mode is not considered as actually useful
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
