@@ -119,7 +119,7 @@ return packer.startup(function(use)
   use({"p00f/nvim-ts-rainbow"})
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
+	use({ "lewis6991/gitsigns.nvim"})
 
   -- Markdown preview
   use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = 'markdown'})
