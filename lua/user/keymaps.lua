@@ -34,9 +34,6 @@ keymap("n", "<leader><space>", ":noh<CR>", opts) -- TODO Move to which key
 -- Search for word under cursor on double click
 keymap("n", "<2-leftMouse>", "*", opts)
 
--- Tags
--- Tag stack (when one tag resolve to multiple tags)
-keymap("n","<A-]>", "<cmd>Telescope tagstack<CR>", opts)
 
 ------------------------------------------------------------------------------------------------
 -- Insert --
