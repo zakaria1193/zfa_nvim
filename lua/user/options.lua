@@ -37,7 +37,11 @@ local options = {
 }
 
 -- Appendings to existing options
-vim.opt.cino:append("(0")-- Easy indent arguments on parenthesis with == see help cinoptions-values , TODO: Make specific to C Language
+
+vim.opt.cino:append("(0")-- Easy indent arguments on parenthesis with == see help cinoptions-values
+-- TODO: Make specific to C Language
+-- FIXME Maybe this is needed to be done within indent-blankline.nvim plugin
+
 -- vim.opt.shortmess:append("c") -- Shorten messages given by completion menus
 
 -- Replace characters with others
