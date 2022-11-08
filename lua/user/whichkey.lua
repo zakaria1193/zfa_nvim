@@ -88,12 +88,18 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["w"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
+  f = 
+  {
+    ["f"] = {
+      "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Find files",
+    },
+    ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    ["w"] = { "<cmd>Telescope grep_string theme=ivy<cr>", "Find Text under cursor" }, -- TO FIX
+    ["W"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
+    ["t"] = { "<cmd>Telescope tags<cr>", "Tags"},
   },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   p = {
     name = "Packer",
@@ -106,21 +112,19 @@ local mappings = {
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" }, -- Depends on termtoggle removed plugin
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    s = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
     p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     u = {
       "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
       "Undo Stage Hunk",
     },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     d = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
@@ -159,15 +163,13 @@ local mappings = {
     },
   },
   s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    name = "Search with Telescope",
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    R = { "<cmd>Telescope registers<cr>", "Registers" },
   },
 
 }
