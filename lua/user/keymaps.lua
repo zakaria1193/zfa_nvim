@@ -25,8 +25,8 @@ vim.g.mapleader = ","
 -- to make full use of whichkey
 
 -- Navigate buffers
-keymap("n", "<C-PageUp>",   ":bnext<CR>", opts)
-keymap("n", "<C-PageDown>", ":bprevious<CR>", opts)
+keymap("n", "<C-PageDown>",   ":bnext<CR>", opts)
+keymap("n", "<C-PageUp>", ":bprevious<CR>", opts)
 
 -- Clear highlighting
 keymap("n", "<leader><space>", ":noh<CR>", opts) -- TODO Move to which key
