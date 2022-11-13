@@ -34,6 +34,9 @@ keymap("n", "<leader><space>", ":noh<CR>", opts) -- TODO Move to which key
 -- Search for word under cursor on double click
 keymap("n", "<2-leftMouse>", "*", opts)
 
+-- Next and previous tag navigation
+keymap("n", "]t", ":tn", opts)
+keymap("n", "[t", ":tp", opts)
 
 ------------------------------------------------------------------------------------------------
 -- Insert --
