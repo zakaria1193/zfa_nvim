@@ -65,3 +65,7 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Commands --
+vim.api.nvim_create_user_command("W", "w", {})
+vim.api.nvim_create_user_command("Wq", "wq", {})
+vim.api.nvim_create_user_command("WQ", "wq", {})
