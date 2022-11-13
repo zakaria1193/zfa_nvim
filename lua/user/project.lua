@@ -2,6 +2,10 @@ local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
 	return
 end
+
+-- FIXME This plugin should be updated to not fall in the trap of submodules
+-- for now it is set in manual mode and left only for the sake of telescope propjects extension
+
 project.setup({
 	---@usage set to false to disable project.nvim.
 	--- This is on by default since it's currently the expected behavior.
@@ -12,7 +16,7 @@ project.setup({
 	---@usage set to true to disable setting the current-woriking directory
 	--- Manual mode doesn't automatically change your root directory, so you have
 	--- the option to manually do so using `:ProjectRoot` command.
-	manual_mode = false,
+	manual_mode = true,
 
 	---@usage Methods of detecting the root directory
 	--- Allowed values: **"lsp"** uses the native neovim lsp
@@ -23,14 +27,14 @@ project.setup({
 	detection_methods = { "pattern" },
 
 	---@usage patterns used to detect root dir, when **"pattern"** is in detection_methods
-	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+	patterns = { ".git" },
 
 	---@ Show hidden files in telescope when searching for files in a project
 	show_hidden = false,
 
 	---@usage When set to false, you will get a message when project.nvim changes your directory.
 	-- When set to false, you will get a message when project.nvim changes your directory.
-	silent_chdir = true,
+	silent_chdir = false,
 
 	---@usage list of lsp client names to ignore when using **lsp** detection. eg: { "efm", ... }
 	ignore_lsp = {},
