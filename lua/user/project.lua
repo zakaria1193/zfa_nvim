@@ -44,7 +44,6 @@ project.setup({
   datapath = vim.fn.stdpath("data"),
 })
 
--- Telescope is not used in zfa_nvim
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
 	return
