@@ -59,6 +59,9 @@ return packer.startup(function(use)
   -- Bufferline
 	use({ "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" })
 
+  -- Close all buffers but the current one
+  use({ "numtostr/BufOnly.nvim", cmd = "BufOnly" })
+
   -- Status bar
 	use({ "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" })
 
