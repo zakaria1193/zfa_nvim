@@ -109,8 +109,6 @@ return packer.startup(function(use)
 --	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
 ---	use({ "hrsh7th/cmp-nvim-lsp", commit = "main" })
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 
 	-- Treesitter
   -- Helps nvim deeper understanding of the code
