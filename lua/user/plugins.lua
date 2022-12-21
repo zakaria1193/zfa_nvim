@@ -133,6 +133,9 @@ return packer.startup(function(use)
 	-- Git
 	use({ "lewis6991/gitsigns.nvim"})
 
+  -- Doxygen
+  use({ "vim-scripts/DoxygenToolkit.vim" })
+
   -- Markdown preview
   use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = 'markdown'})
 
