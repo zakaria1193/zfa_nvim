@@ -116,13 +116,13 @@ cmp.setup {
   },
   sources = {
     -- Order is important = Order it is shown
+    -- Add new sources to this
+    -- { name = "nvim_lsp" },
+    { name = "copilot" },
+    { name = "tags", max_item_count = 5 },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    -- { name = "nvim_lsp" },
-    -- Add new sources to this
-    { name = "copilot" },
-    { name = "tags" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
