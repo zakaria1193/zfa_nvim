@@ -96,7 +96,11 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions, requires snipped engine (in snippets section)
 	use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
   ---- Add mode completion sources here, then config in cmp.lua
-  use({ "hrsh7th/cmp-copilot" })
+  use { "zbirenbaum/copilot-cmp", after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end }
+
   use({ "quangnguyen30192/cmp-nvim-tags" })
 
 	-- snippets
@@ -106,8 +110,16 @@ return packer.startup(function(use)
   -- Vim gutentags
   use({ "ludovicchabant/vim-gutentags" })
 
-  -- Github Copilot
-  use({"github/copilot.vim"})
+  -- Github Copilot (Delayed lazyload)
+  use {
+    "zbirenbaum/copilot.lua",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end, 100)
+    end,
+  }
 
 	-- LSP
 --	use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
