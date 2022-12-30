@@ -51,6 +51,9 @@ keymap("v", ">", ">gv", opts)
 -- So you can keep replacing. FIXME Is this really the best way for this issue?
 keymap("v", "p", '"_dP', opts)
 
+-- Run Chat GPT on the selected chunk
+keymap("x", "<leader>cc", "<cmd>ChatGPTRunCustomCodeAction<CR>", opts);
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)

@@ -84,6 +84,11 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
+  c = {
+    name = "ChatGPT/Copilot",
+    ["c"] = { "<cmd>ChatGPT<CR>", "prompt" },
+    ["s"] = { "<cmd>Copilot status<CR>", "Github copilot status" },
+  },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["w"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
