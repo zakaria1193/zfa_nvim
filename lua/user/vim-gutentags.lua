@@ -3,7 +3,7 @@
   vim.g.gutentags_generate_on_missing = true
   vim.g.gutentags_generate_on_empty_buffer = false
   vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS'}
-  vim.g.gutentags_trace = 1
+  vim.g.gutentags_trace = 0
   vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')]])
 
   vim.g.gutentags_ctags_exclude = {
