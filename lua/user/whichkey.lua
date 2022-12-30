@@ -103,7 +103,7 @@ local mappings = {
     },
     ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["w"] = { "<cmd>Telescope grep_string theme=ivy<cr>", "Find Text under cursor" }, -- TO FIX
-    ["W"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    ["W"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep <C-k> for extra args" },
     ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
     ["t"] = { "<cmd>Telescope tags<cr>", "Tags"},
   },
