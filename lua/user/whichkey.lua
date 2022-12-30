@@ -94,6 +94,7 @@ local mappings = {
   ["w"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["<S-w>"] = { "<cmd>BufOnly<CR>", "Close other Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  ["r"] = { "<cmd>ProjectRoot<CR>", "cwd to Project root" },
   f = 
   {
     ["f"] = {
