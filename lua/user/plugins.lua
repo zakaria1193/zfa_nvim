@@ -168,7 +168,7 @@ return packer.startup(function(use)
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim"})
-  use({ "codeindulgence/vim-tig" })
+  use({ "iberianpig/tig-explorer.vim" })
 
   -- Doxygen
   use({ "vim-scripts/DoxygenToolkit.vim" })

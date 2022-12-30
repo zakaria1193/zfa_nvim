@@ -52,5 +52,8 @@ for k, v in pairs(options) do
 vim.opt[k] = v  
 end
 
+-- Close terminal after leaving (NO process exited 0 buffer left)
+vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
+
 vim.cmd "set whichwrap+=<,>,[,],h,l" -- TODO Do i need this
 vim.cmd [[set iskeyword+=-]] -- TODO Do i need this
