@@ -38,6 +38,9 @@ keymap("n", "<2-leftMouse>", "*", opts)
 keymap("n", "]t", ":tn", opts)
 keymap("n", "[t", ":tp", opts)
 
+-- ChatGPT
+keymap("n", "<F8>", "<cmd>ChatGPT<CR>", opts)
+
 ------------------------------------------------------------------------------------------------
 -- Insert --
 
@@ -52,7 +55,7 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Run Chat GPT on the selected chunk
-keymap("x", "<leader>cc", "<cmd>ChatGPTRunCustomCodeAction<CR>", opts);
+keymap("x", "<f8>", "<cmd>ChatGPTRunCustomCodeAction<CR>", opts);
 
 -- Visual Block --
 -- Move text up and down
