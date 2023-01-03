@@ -56,8 +56,8 @@ cmp.setup {
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
@@ -65,12 +65,11 @@ cmp.setup {
       c = cmp.mapping.close(),
     },
     -- Accept currently selected item. If none selected, `select` first item.
+    -- If select is true
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = false },
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expandable() then
+      if luasnip.expandable() then
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
@@ -84,9 +83,7 @@ cmp.setup {
       "s",
     }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
+      if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
@@ -114,14 +111,15 @@ cmp.setup {
       return vim_item
     end,
   },
+
   sources = {
     -- Order is important = Order it is shown
     -- Add new sources to this
     -- { name = "nvim_lsp" },
     { name = "copilot" },
-    { name = "tags", max_item_count = 5 },
-    { name = "luasnip" },
-    { name = "buffer" },
+    { name = "tags", max_item_count = 2, keyword_length = 4 },
+    { name = "luasnip", max_item_count = 2 },
+    { name = "buffer", keyword_length = 4 },
     { name = "path" },
   },
   confirm_opts = {
