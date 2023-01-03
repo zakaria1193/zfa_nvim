@@ -117,15 +117,28 @@ return packer.startup(function(use)
     config = function()
       vim.defer_fn(function()
         require("copilot").setup(
-        {
-        filetypes = {
-            markdown = true,
-          },
-        })
+          {
+            suggestion = {
+              enabled = true,
+              auto_trigger = true,
+              debounce = 75,
+              keymap = {
+                accept = "<M-l>",
+                accept_word = false,
+                accept_line = false,
+                next = "<M-]>",
+                prev = "<M-[>",
+                dismiss = "<C-]>",
+              },
+            },
+            panel = { auto_refresh = true },
+            filetypes = {
+              markdown = true,
+            },
+          })
       end, 100)
     end,
   }
-
   -- ChatGPT
   use({
     "jackMort/ChatGPT.nvim",
