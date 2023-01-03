@@ -116,7 +116,12 @@ return packer.startup(function(use)
     event = "VimEnter",
     config = function()
       vim.defer_fn(function()
-        require("copilot").setup()
+        require("copilot").setup(
+        {
+        filetypes = {
+            markdown = true,
+          },
+        })
       end, 100)
     end,
   }
