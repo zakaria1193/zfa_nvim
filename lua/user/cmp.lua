@@ -54,8 +54,8 @@ cmp.setup {
     end,
   },
   mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(), -- FIXME shouldnt open omni
+    ["<C-n>"] = cmp.mapping.select_next_item(), -- FIXME shouldnt open omni
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -116,10 +116,10 @@ cmp.setup {
     -- Order is important = Order it is shown
     -- Add new sources to this
     -- { name = "nvim_lsp" },
-    { name = "copilot" },
-    { name = "tags", max_item_count = 2, keyword_length = 4 },
+    { name = "copilot", keyword_length = 1},
+    { name = "tags",    max_item_count = 2, keyword_length = 4 },
     { name = "luasnip", max_item_count = 2 },
-    { name = "buffer", keyword_length = 4 },
+    { name = "buffer",  max_item_count = 3, keyword_length = 4 },
     { name = "path" },
   },
   confirm_opts = {
