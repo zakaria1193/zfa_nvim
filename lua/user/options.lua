@@ -54,5 +54,9 @@ end
 -- Close terminal after leaving (NO process exited 0 buffer left)
 vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
 
+-- Highliht last column
+vim.api.nvim_set_option_value("colorcolumn", "100", {})
+
 vim.cmd "set whichwrap+=<,>,[,],h,l" -- TODO Do i need this
 vim.cmd [[set iskeyword+=-]] -- TODO Do i need this
+
