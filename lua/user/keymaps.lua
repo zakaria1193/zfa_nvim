@@ -35,8 +35,12 @@ keymap("n", "<leader><space>", ":noh<CR>", opts) -- TODO Move to which key
 keymap("n", "<2-leftMouse>", "*", opts)
 
 -- Next and previous tag navigation
-keymap("n", "]t", ":tn", opts)
-keymap("n", "[t", ":tp", opts)
+keymap("n", "]t", ":tn<CR>", opts)
+keymap("n", "[t", ":tp<CR>", opts)
+
+-- Quickfix navigation
+keymap("n", "]q", ":cnext<CR>", opts)
+keymap("n", "[q", ":cprevious<CR>", opts)
 
 -- ChatGPT
 keymap("n", "<F8>", "<cmd>ChatGPT<CR>", opts)
