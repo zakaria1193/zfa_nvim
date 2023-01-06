@@ -104,7 +104,6 @@ local mappings = {
     },
     ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["w"] = { "<cmd>Telescope grep_string word_match=-w theme=ivy<cr>", "Find exact word under cursor" },
-    ["W"] = { "yiw:Telescope grep_string word_match=-w search=<c-R>0", "Find exact word under cursor" },
     ["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep <C-k> for extra args" },
     ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
     ["t"] = { "<cmd>Telescope treesitter <cr>", "Tags in file (using treesitter)"},

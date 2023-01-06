@@ -58,6 +58,15 @@ keymap("v", ">", ">gv", opts)
 -- So you can keep replacing. FIXME Is this really the best way for this issue?
 keymap("v", "p", '"_dP', opts)
 
+-- Declare function that uses telescope live_grep to search for content of register 0
+-- This is used to search for the content of the yank register
+function search_yank()
+  local register = vim.fn.getreg('"')
+  require("telescope.builtin").grep_string({ search = register })
+end
+
+keymap("v", "<leader>fw", "y<cmd>lua search_yank()<CR>", opts)
+
 -- Run Chat GPT on the selected chunk
 keymap("x", "<f8>", "<cmd>ChatGPTRunCustomCodeAction<CR>", opts);
 
