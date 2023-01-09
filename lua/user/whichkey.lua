@@ -107,7 +107,7 @@ local mappings = {
     ["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep <C-k> for extra args" },
     ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
     ["t"] = { "<cmd>Telescope treesitter <cr>", "Tags in file (using treesitter)"},
-    ["T"] = { "<cmd>Telescope tags<cr>", "Tags"},
+    ["T"] = { "<cmd>Telescope tags only_sort_tags=false<cr>", "Tags"},
   },
 
   p = {
