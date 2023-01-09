@@ -6,6 +6,8 @@
   vim.g.gutentags_trace = 0
   vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')]])
 
+  vim.g.gutentags_file_list_command = 'rg --files'
+
   vim.g.gutentags_ctags_exclude = {
        '*.git', '*.svg', '*.hg',
        '.ccls', 'ccls-cache/*',
