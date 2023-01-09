@@ -22,6 +22,9 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
 
         ["<C-c>"] = actions.close,
+
+      -- NORMAL mode is not accessible following zfa's change of using esc = actions.close in insert mode
+      -- normal mode is not considered as actually useful
         ["<esc>"] = actions.close,
 
         ["<Down>"] = actions.move_selection_next,
@@ -46,8 +49,6 @@ telescope.setup {
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
 
-      -- NORMAL mode is not accessible following zfa's change of using esc = actions.close in insert mode
-      -- normal mode is not considered as actually useful
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
