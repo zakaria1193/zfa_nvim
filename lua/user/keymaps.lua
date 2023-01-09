@@ -34,6 +34,9 @@ keymap("n", "<leader><space>", ":noh<CR>", opts) -- TODO Move to which key
 -- Search for word under cursor on double click
 keymap("n", "<2-leftMouse>", "*", opts)
 
+-- Go to tag
+keymap("n", "<a-]>",  "<cmd>lua require('telescope').extensions.ctags_plus.jump_to_tag()<cr>", opts)
+
 -- Next and previous tag navigation
 keymap("n", "]t", ":tn<CR>", opts)
 keymap("n", "[t", ":tp<CR>", opts)
