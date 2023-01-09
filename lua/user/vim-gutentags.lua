@@ -16,6 +16,7 @@
        'bin',
        '*.bin',
        '*.elf',
+       '.o',
        '*.S',
        '*.idx',
        'node_modules',
@@ -65,4 +66,5 @@
        '**/firmware-bitcloud/generic-embedded/*',
        '*/nwk.c',
        '*/aps.c',
-       '*/zcl.c' }
+       '*/zcl.c',
+       '**/toolchain/*'}

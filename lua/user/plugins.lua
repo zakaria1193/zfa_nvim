@@ -108,7 +108,7 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" }) -- a bunch of snippets to use
 
   -- Vim gutentags
-  use({ "ludovicchabant/vim-gutentags", event = "BufWritePost" })
+  use({ "ludovicchabant/vim-gutentags" })
 
   -- Github Copilot (Delayed lazyload)
   use {
