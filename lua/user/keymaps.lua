@@ -202,7 +202,7 @@ local mappings = {
     },
     ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["w"] = { "<cmd>Telescope grep_string word_match=-w theme=ivy<cr>", "Find exact word under cursor" },
-    ["l"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Live Grep <C-k> for extra args" },
+    ["l"] = { "<cmd>Telescope live_grep<cr>", "Live Grep <C-space> for fuzzy filtering" },
     ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
     ["t"] = { "<cmd>Telescope treesitter <cr>", "Tags in file (using treesitter)"},
     ["T"] = { "<cmd>Telescope tags only_sort_tags=false<cr>", "Tags"},

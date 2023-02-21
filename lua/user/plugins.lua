@@ -162,15 +162,7 @@ return packer.startup(function(use)
 ---	use({ "hrsh7th/cmp-nvim-lsp", commit = "main" })
 
 	-- Telescope
-  use {
-    "nvim-telescope/telescope.nvim",
-    requires = {
-      { "nvim-telescope/telescope-live-grep-args.nvim" },
-    },
-    config = function()
-      require("telescope").load_extension("live_grep_args")
-    end
-  }
+  use { "nvim-telescope/telescope.nvim" }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'gnfisher/nvim-telescope-ctags-plus'}
 
