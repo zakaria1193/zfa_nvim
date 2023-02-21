@@ -140,20 +140,20 @@ return packer.startup(function(use)
     end,
   }
   -- ChatGPT
-  use({
-    "jackMort/ChatGPT.nvim",
-      event = "VimEnter",
-      config = function()
-        require("chatgpt").setup({
-          -- optional configuration
-        })
-      end,
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
-  })
+  -- use({
+  --   "jackMort/ChatGPT.nvim",
+  --     event = "VimEnter",
+  --     config = function()
+  --       require("chatgpt").setup({
+  --         -- optional configuration
+  --       })
+  --     end,
+  --     requires = {
+  --       "MunifTanjim/nui.nvim",
+  --       "nvim-lua/plenary.nvim",
+  --       "nvim-telescope/telescope.nvim"
+  --     }
+  -- })
 
 	-- LSP
 --	use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
