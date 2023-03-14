@@ -68,7 +68,7 @@ function search_yank()
   require("telescope.builtin").grep_string({ search = register })
 end
 
-keymap("v", "<leader>fw", "y<cmd>lua search_yank()<CR>", opts)
+keymap("v", "<leader>f", "y<cmd>lua search_yank()<CR>", opts)
 
 -- Run Chat GPT on the selected chunk
 keymap("x", "<f8>", "<cmd>ChatGPTRunCustomCodeAction<CR>", opts);
