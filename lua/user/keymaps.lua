@@ -187,6 +187,7 @@ local mappings = {
     ["c"] = { "<cmd>ChatGPT<CR>", "prompt [F8]" },
     ["s"] = { "<cmd>Copilot status<CR>", "Copilot status" },
     ["p"] = { "<cmd>Copilot panel<CR>", "Copilot panel" },
+    ["t"] = { "<cmd>Copilot toggle<CR>", "Copilot toggle enable disable" },
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
