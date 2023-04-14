@@ -33,6 +33,7 @@ local options = {
   sidescrolloff = 8,
   virtualedit = "block",                   -- Allow the cursor to go anywhere in visual block mode.
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  colorcolumn = "100",                     -- highlight the 100th character
 }
 
 -- Appendings to existing options
