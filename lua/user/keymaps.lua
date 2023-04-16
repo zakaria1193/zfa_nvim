@@ -175,7 +175,6 @@ local opts = {
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
-
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
@@ -242,29 +241,22 @@ local mappings = {
 
   l = {
     name = "LSP",
+    d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+    t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+    i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+    h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+    r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+    R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    n = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
-    },
+    g = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics", },
     w = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
-    },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    I = { "<cmd>LspInfo<cr>", "Info" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
