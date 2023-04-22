@@ -156,11 +156,11 @@ return packer.startup(function(use)
   })
 
 	-- LSP
-use { 'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end }
-use { "williamboman/mason-lspconfig.nvim" }
-use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
---	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
-use({ "hrsh7th/cmp-nvim-lsp", commit = "main" })
+  use { 'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end }
+  use { "williamboman/mason-lspconfig.nvim" }
+  use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
+  --	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+  use({ "hrsh7th/cmp-nvim-lsp", commit = "main" })
 
 
 
