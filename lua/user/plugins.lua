@@ -113,7 +113,7 @@ return packer.startup(function(use)
   -- Github Copilot (Delayed lazyload)
   use {
     "zbirenbaum/copilot.lua",
-    event = "VimEnter",
+    event = "InsertEnter",
     config = function()
       vim.defer_fn(function()
         require("copilot").setup(
