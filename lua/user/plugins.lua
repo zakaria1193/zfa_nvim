@@ -146,6 +146,9 @@ return packer.startup(function(use)
       config = function()
         require("chatgpt").setup({
           -- optional configuration
+          popup_input = {
+            submit = "<C-s>",
+          },
         })
       end,
       requires = {
