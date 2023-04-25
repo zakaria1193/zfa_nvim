@@ -79,6 +79,9 @@ return packer.startup(function(use)
   --  Creates parenthesis pairs
 	use({ "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" }) -- Autopairs, integrates with both cmp and treesitter
 
+  --- Interesting words
+  use{'lfv89/vim-interestingwords'}
+
   -- Adds good indent to new lines
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
 
