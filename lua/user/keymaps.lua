@@ -251,11 +251,6 @@ local mappings = {
     R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     n = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    g = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics", },
-    w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
-    },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     I = { "<cmd>LspInfo<cr>", "Info" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
@@ -263,6 +258,14 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+  },
+  d = {
+    name = "Diagnostics",
+    n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+    p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+    l = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
+    q = { "<cmd>TroubleClose<cr>", "Close Trouble" },
   },
   s = {
     name = "Search with Telescope",
