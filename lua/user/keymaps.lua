@@ -70,9 +70,6 @@ end
 
 keymap("v", "<leader>f", "y<cmd>lua search_yank()<CR>", opts)
 
--- Run Chat GPT on the selected chunk
-keymap("x", "<f8>", "<cmd>ChatGPTRunCustomCodeAction<CR>", opts);
-
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
@@ -195,7 +192,7 @@ local mappings = {
   ["<S-w>"] = { "<cmd>BufOnly<CR>", "Close other Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["r"] = { "<cmd>ProjectRoot<CR>", "cwd to Project root" },
-  f = 
+  f =
   {
     ["f"] = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
