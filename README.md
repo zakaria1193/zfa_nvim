@@ -2,7 +2,6 @@ Welcome to my Neovim configuration!
 
 This configuration is designed to be used with Neovim 0.5.0 or later.
 
-
 On my day to day I use Neovim for C/C++, Python, and Lua development.
 
 ## Approach
@@ -25,10 +24,15 @@ Not minimalist enough for an embedded Linux editor.
 Language Server Protocol support for C/C++, Python, and Lua.
 Very good for real time code linting/analysis and completion.
 
+I use `trouble.nvim` to show the diagnostics in a nice way.
+
 #### C/C++
 Uses Clangd as LSP server.
-Uses clang-tidy for code linting. As long as you have .clang-tidy config file in your project root, it will be used.
+
+Uses `clang-tidy` for code linting. As long as you have .clang-tidy config file in your project root, it will be used.
 Can check many things, such as if you C++ is modern enough ;)
+
+- [ ] TODO: Add clang-format support
 
 #### Python
 Uses Pyright as LSP server.
@@ -37,5 +41,19 @@ Uses Pyright as LSP server.
 Uses Sumneko as LSP server.
 I use this doe 
 
+### Remembering keybindings
+How do i rememeber all the keybindings? I don't.
+I use whichkey to show me all the keybindings for the current mode.
 
+### Git integration
+- Mainly use `TIG` for git operations
+- Gitsigns for showing git diff in the gutter
+- [ ] Add ]g and [g for navigating git diff hunks
+
+### File explorer
+- Nvim-tree does the job
+
+### Autocompletion
+- Copilot for open source projects (Risk of IP leakage, so use with caution)
+- LSP for autocompletion when Copilot is not available
 
