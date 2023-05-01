@@ -258,6 +258,7 @@ local mappings = {
   },
   d = {
     name = "Diagnostics",
+    h = { "<cmd>lua vim.diagnostic.open_float()<CR>", "hover"},
     n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
     l = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
