@@ -115,10 +115,10 @@ cmp.setup {
   sources = {
     -- Order is important = Order it is shown
     -- Add new sources to this
-    { name = "nvim_lsp" },
-    { name = "tags",    max_item_count = 3, keyword_length = 4 },
+    { name = "nvim_lsp", max_item_count = 3, keyword_length = 3 },
+    { name = "tags",    max_item_count = 3, keyword_length = 3 },
     { name = "luasnip", max_item_count = 2 },
-    { name = "buffer",  max_item_count = 3, keyword_length = 4 },
+    { name = "buffer",  max_item_count = 3, keyword_length = 3 },
     { name = "copilot", keyword_length = 1},
     { name = "path" },
   },
