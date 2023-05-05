@@ -167,8 +167,6 @@ return packer.startup(function(use)
   use({ "neovim/nvim-lspconfig" })
   -- LSP autocomplete
   use({ "hrsh7th/cmp-nvim-lsp" })
-  -- LSP snippets
-  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   -- Trouble for diagnostics navigation
   use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
 
