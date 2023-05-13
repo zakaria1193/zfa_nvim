@@ -97,6 +97,7 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-path" }) -- path completions
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions, requires snipped engine (in snippets section)
 	use({ "hrsh7th/cmp-nvim-lua" }) -- nvim lua completions
+  use({ "hrsh7th/cmp-nvim-lsp-signature-help" }) -- signature helper
   ---- Add mode completion sources here, then config in cmp.lua
   use { "zbirenbaum/copilot-cmp", after = { "copilot.lua" },
     config = function ()
