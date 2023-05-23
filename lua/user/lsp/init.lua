@@ -7,7 +7,10 @@ require("mason-lspconfig").setup(
       "lua_ls",
       "pyright",
       "jsonls",
-      "clangd"
+      "clangd",
+      "html",
+      "cssls",
+      "eslint"
     },
   }
 )
@@ -17,6 +20,7 @@ require "user.lsp.settings.pyright"
 require "user.lsp.settings.lua_ls"
 require "user.lsp.settings.jsonls"
 require "user.lsp.settings.clangd"
+require "user.lsp.settings.webdev" -- JavaScript, TypeScript, HTML, CSS LSPs
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
