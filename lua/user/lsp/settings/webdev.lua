@@ -6,3 +6,5 @@ lspconfig.html.setup{}
 
 lspconfig.cssls.setup{}
 
+lspconfig.tsserver.setup{}
+

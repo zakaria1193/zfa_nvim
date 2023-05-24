@@ -10,7 +10,8 @@ require("mason-lspconfig").setup(
       "clangd",
       "html",
       "cssls",
-      "eslint"
+      "eslint",
+      "tsserver"
     },
   }
 )
