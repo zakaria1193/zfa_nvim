@@ -49,7 +49,6 @@ nvim_tree.setup {
   view = {
     adaptive_size = true,
     width = 30,
-    height = 30,
     side = "left",
   }
 }
