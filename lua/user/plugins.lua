@@ -182,7 +182,7 @@ return packer.startup(function(use)
   -- makes autindent, highlight, autoparing parenthesis ..
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		commit = "v0.8.0",
+		commit = "v0.9.0",
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	})
   -- make parenthesis in rainbows to tell matching easily
