@@ -105,8 +105,6 @@ return packer.startup(function(use)
       require("copilot_cmp").setup()
     end }
 
-  use({ "quangnguyen30192/cmp-nvim-tags" })
-
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" })
