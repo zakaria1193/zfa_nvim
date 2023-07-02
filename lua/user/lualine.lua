@@ -74,7 +74,9 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diff, diagnostics },
 		lualine_b = { mode },
-		lualine_c = { "vim.fn.getcwd()" },
+		lualine_c = { "vim.fn.getcwd()" ,
+                  require("dr-lsp").lspCount,
+                  require("dr-lsp").lspProgress },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { spaces, "encoding", filetype },
 		lualine_y = { location },

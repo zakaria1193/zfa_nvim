@@ -65,6 +65,9 @@ return packer.startup(function(use)
   -- Status bar
 	use({ "nvim-lualine/lualine.nvim" })
 
+  -- LSP info in the status bar
+  use { "chrisgrieser/nvim-dr-lsp" }
+
   -- Project manager
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "moll/vim-bbye" })
