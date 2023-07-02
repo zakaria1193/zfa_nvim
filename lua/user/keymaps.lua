@@ -203,7 +203,6 @@ local mappings = {
     ["l"] = { "<cmd>Telescope live_grep<cr>", "Live Grep <C-space> for fuzzy filtering" },
     ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
     ["t"] = { "<cmd>Telescope treesitter <cr>", "Tags in file (using treesitter)"},
-    ["T"] = { "<cmd>Telescope tags only_sort_tags=false<cr>", "Tags"},
   },
 
   p = {
@@ -267,7 +266,6 @@ local mappings = {
     name = "Search with Telescope",
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
