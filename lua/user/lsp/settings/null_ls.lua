@@ -28,7 +28,10 @@ null_ls.setup {
         end,
       })
     end
-  end
+  end,
+  on_init = function(new_client, _) 
+    new_client.offset_encoding = 'utf-32'
+  end,
 }
 
 vim.api.nvim_create_user_command(

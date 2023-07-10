@@ -1,6 +1,11 @@
 local lspconfig = require("lspconfig")
 
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup {
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}
 
 -- Disable semantic highlighting for #ifdef blocks
 -- see help lsp-semantic-highlighting
