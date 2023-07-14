@@ -12,7 +12,7 @@ local lsp_formatting = function(bufnr)
   })
 end
 
-null_ls.setup {
+null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.diagnostics.cppcheck
@@ -29,10 +29,15 @@ null_ls.setup {
       })
     end
   end,
-  on_init = function(new_client, _) 
+})
+
+-- Fix encoding issues with null-ls
+-- For some reason this doesn't work in the first setup call
+null_ls.setup({
+  on_init = function(new_client, _)
     new_client.offset_encoding = 'utf-32'
   end,
-}
+})
 
 vim.api.nvim_create_user_command(
   'DisableLspFormatting',
