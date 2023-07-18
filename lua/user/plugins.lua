@@ -145,23 +145,24 @@ return packer.startup(function(use)
     end,
   }
   -- ChatGPT
-  use({
-    "jackMort/ChatGPT.nvim",
-      event = "VimEnter",
-      config = function()
-        require("chatgpt").setup({
-          -- optional configuration
-          popup_input = {
-            submit = "<C-s>",
-          },
-        })
-      end,
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
-  })
+  --[[ use({ ]]
+  --[[   "jackMort/ChatGPT.nvim", ]]
+  --[[     event = "VimEnter", ]]
+  --[[     config = function() ]]
+  --[[       require("chatgpt").setup({ ]]
+  --[[         -- optional configuration ]]
+  --[[         popup_input = { ]]
+  --[[           submit = "<C-s>", ]]
+  --[[         }, ]]
+  --[[       }) ]]
+  --[[     end, ]]
+  --[[     requires = { ]]
+  --[[       "MunifTanjim/nui.nvim", ]]
+  --[[       "nvim-lua/plenary.nvim", ]]
+  --[[       "nvim-telescope/telescope.nvim" ]]
+  --[[     } ]]
+  --[[ }) ]]
+  --[[]]
 
   -- LSP servers installer
   use { 'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end }
