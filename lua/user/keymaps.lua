@@ -37,6 +37,7 @@ keymap("n", "<2-leftMouse>", "*", opts)
 -- Next and previous tag navigation
 keymap("n", "]t", ":tn<CR>", opts)
 keymap("n", "[t", ":tp<CR>", opts)
+keymap("n", "<C-]>", "g<C-]>", opts)
 
 -- Quickfix navigation
 keymap("n", "]q", ":cnext<CR>", opts)
