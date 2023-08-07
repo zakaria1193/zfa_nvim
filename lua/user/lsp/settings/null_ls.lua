@@ -15,7 +15,10 @@ end
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd,
-    null_ls.builtins.diagnostics.cppcheck
+    null_ls.builtins.diagnostics.cppcheck,
+    null_ls.builtins.diagnostics.shellcheck,
+    null_ls.builtins.diagnostics.markdownlint,
+    null_ls.builtins.diagnostics.flake8,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
