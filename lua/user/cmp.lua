@@ -97,6 +97,7 @@ cmp.setup {
     { name = "buffer",  max_item_count = 3, keyword_length = 3 },
     { name = "copilot", keyword_length = 1},
     { name = "path" },
+    { name = 'nvim_lua' }, -- hrsh7th / cmp-nvim-lua
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
