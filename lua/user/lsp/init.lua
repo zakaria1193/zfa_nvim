@@ -29,3 +29,7 @@ require "user.lsp.settings.null_ls" -- null-ls (Special LSP glue for formatting 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+
+-- Disable watchfunc for LSP for CPU usage reasons
+-- see https://github.com/neovim/neovim/issues/23291#issuecomment-1560742827
+require('vim.lsp._watchfiles')._watchfunc = function(_, _, _) return true end
