@@ -1,3 +1,9 @@
+<a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/plugin-manager?style=flat" /></a>
+
+Hi ! I'm <a href="https://linkedin.com/in/fadlizakaria">Zakaria Fadli</a>
+
 Welcome to my Neovim configuration!
 
 This configuration is designed to be used with Neovim 0.5.0 or later.
