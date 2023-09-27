@@ -103,10 +103,10 @@ return packer.startup(function(use)
   use({ "hrsh7th/cmp-nvim-lsp-signature-help" }) -- signature helper
   use({ "jose-elias-alvarez/null-ls.nvim" }) -- null-ls
   ---- Add mode completion sources here, then config in cmp.lua
-  use { "zbirenbaum/copilot-cmp", after = { "copilot.lua" },
-    config = function ()
-      require("copilot_cmp").setup()
-    end }
+  --[[ use { "zbirenbaum/copilot-cmp", after = { "copilot.lua" }, ]]
+  --[[   config = function () ]]
+  --[[     require("copilot_cmp").setup() ]]
+  --[[   end } ]]
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" })
