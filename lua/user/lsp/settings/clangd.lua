@@ -5,6 +5,7 @@ lspconfig.clangd.setup {
     "clangd",
     "--offset-encoding=utf-16",
   },
+  filetypes = {'cpp'}
 }
 
 -- Disable semantic highlighting for #ifdef blocks
