@@ -17,7 +17,6 @@ require("mason-lspconfig").setup(
 )
 
 -- Configure LSP
-require "user.lsp.settings.pyright"
 require "user.lsp.settings.lua_ls"
 require "user.lsp.settings.jsonls"
 require "user.lsp.settings.clangd"
