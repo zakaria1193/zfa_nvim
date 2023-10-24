@@ -27,6 +27,7 @@ null_ls.setup({
     null_ls.builtins.formatting.isort,
     null_ls.builtins.formatting.black,
   },
+  root_dir = require("null-ls.utils").root_pattern(".null-ls-root"),
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
