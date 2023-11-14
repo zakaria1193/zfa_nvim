@@ -45,7 +45,7 @@ vim.opt.cino:append("(0")-- Easy indent arguments on parenthesis with == see hel
 -- vim.opt.shortmess:append("c") -- Shorten messages given by completion menus
 
 -- Replace characters with others
-vim.opt.listchars:append({tab= '>-', trail='␠', nbsp= '⎵'}) 
+vim.opt.listchars:append({tab= '--', trail='␠', nbsp= '⎵'}) 
 vim.opt.list = true
 
 for k, v in pairs(options) do
