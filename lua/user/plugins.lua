@@ -186,6 +186,9 @@ use({
   -- Markdown preview
   use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = 'markdown'})
 
+  -- Highlight CSS colors
+  use({ "norcalli/nvim-colorizer.lua" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
