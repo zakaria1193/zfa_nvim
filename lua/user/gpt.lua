@@ -107,10 +107,10 @@ local config = {
  	chat_conceal_model_params = true,
  	-- local shortcuts bound to the chat buffer 
  	-- (be careful to choose something which will work across specified modes) 
- 	chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g><C-g>" },
- 	chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>d" },
- 	chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>s" },
- 	chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<C-g>c" },
+ 	chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<F1>" },
+ 	chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<F2>" },
+ 	chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<F3>" },
+ 	chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<F4>" },
  	-- default search term when using :GpChatFinder 
  	chat_finder_pattern = "topic ",
  	-- if true, finished ChatResponder won't move the cursor to the end of the buffer 

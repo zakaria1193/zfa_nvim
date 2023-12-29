@@ -43,11 +43,9 @@ keymap("n", "<C-]>", "g<C-]>", opts)
 keymap("n", "]q", ":cnext<CR>", opts)
 keymap("n", "[q", ":cprevious<CR>", opts)
 
--- ChatGPT
-keymap("n", "<F8>", "<cmd>ChatGPT<CR>", opts)
-
 ------------------------------------------------------------------------------------------------
 -- Insert --
+-- 
 
 ------------------------------------------------------------------------------------------------
 -- Visual --
@@ -68,6 +66,12 @@ end
 
 keymap("v", "<leader>f", "y<cmd>lua search_yank()<CR>", opts)
 
+-- GPT rewrite https://github.com/Robitx/gp.nvim
+keymap("v", "<F1>", "<cmd>GpChatPaste<CR>", opts)
+keymap("v", "<F2>", "<cmd>GpRewrite<CR>", opts)
+keymap("v", "<F3>", "<cmd>GpImplement<CR>", opts)
+
+------------------------------------------------------------------------------------------------
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
@@ -180,8 +184,9 @@ local mappings = {
     name = "ChatGPT/Copilot",
     ["s"] = { "<cmd>Copilot status<CR>", "CP status" },
     ["p"] = { "<cmd>Copilot panel<CR>", "CP panel" },
-    ["d"] = { "<cmd>Copilot disable<CR>", "CP disable" },
-    ["e"] = { "<cmd>Copilot enable<CR>", "CP enable" }
+    ["d"] = { "<cmd>Copilot disable<CR>", "CP disable" }, 
+    ["e"] = { "<cmd>Copilot enable<CR>", "CP enable" },
+    ["n"] = { "<cmd>GpChatNew<CR>", "CGPT new chat"},
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
