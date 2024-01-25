@@ -33,7 +33,7 @@ local config = {
  		{
  			name = "ChatGPT4",
  			chat = true,
- 			command = false,
+ 			command = true,
  			-- string with model name or table with model name and parameters
  			model = { model = "gpt-4-1106-preview", temperature = 1.1, top_p = 1 },
  			-- system prompt (use this to specify the persona/role of the AI) 
@@ -78,7 +78,7 @@ local config = {
  		{
  			name = "CodeGPT3-5",
  			chat = false,
- 			command = true,
+ 			command = false, -- Zakaria: I changed this to false
  			-- string with model name or table with model name and parameters 
  			model = { model = "gpt-3.5-turbo-1106", temperature = 0.8, top_p = 1 },
  			-- system prompt (use this to specify the persona/role of the AI) 
