@@ -44,6 +44,7 @@
        '*.bak',
        '*.zip',
        '*.pyc',
+      '.mypy_cache/'
        '*.class',
        '*.sln',
        '*.Master',
