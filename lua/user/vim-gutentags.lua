@@ -11,7 +11,7 @@
   vim.g.gutentags_ctags_exclude = {
        '*.git', '*.svg', '*.hg',
        '.ccls', 'ccls-cache/*',
-       '*/.null-ls*',
+       '.null-ls*',
        '*/tests/*',
        'build',
        'dist',
