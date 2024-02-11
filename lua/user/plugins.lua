@@ -134,6 +134,7 @@ return packer.startup(function(use)
             panel = { auto_refresh = true },
             filetypes = {
               markdown = true,
+              yaml = true,
             },
           })
       end, 100)
