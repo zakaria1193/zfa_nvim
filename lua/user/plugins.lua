@@ -169,6 +169,9 @@ use({
 		commit = "v0.9.0",
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	})
+  -- Treesitter context
+  use({ "nvim-treesitter/nvim-treesitter-context" })
+
   -- make parenthesis in rainbows to tell matching easily
   use({"p00f/nvim-ts-rainbow"})
 
