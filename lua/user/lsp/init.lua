@@ -4,23 +4,26 @@ require("mason-lspconfig").setup(
   {
     -- Use names from https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
     ensure_installed = {
+      "bashls",
       "lua_ls",
-      "pyright",
       "jsonls",
       "clangd",
       "html",
       "cssls",
       "eslint",
-      "tsserver"
+      "tsserver",
+      "ruff_lsp",
     },
   }
 )
 
 -- Configure LSP
-require "user.lsp.settings.lua_ls"
-require "user.lsp.settings.jsonls"
-require "user.lsp.settings.clangd"
-require "user.lsp.settings.webdev" -- JavaScript, TypeScript, HTML, CSS LSPs
+require "user.lsp.settings.lua_ls" -- lua_ls
+require "user.lsp.settings.jsonls" -- jsonls
+require "user.lsp.settings.clangd" -- clangd
+require "user.lsp.settings.python" -- ruff-lsp (rust implem)
+require "user.lsp.settings.webdev" -- html, css, eslint, tsserver
+require "user.lsp.settings.shell" -- bashls
 require "user.lsp.settings.none_ls" -- null-ls (Special LSP glue for formatting and linting)
 
 -- Global mappings.
