@@ -25,6 +25,7 @@ require "user.lsp.settings.python" -- ruff-lsp (rust implem)
 require "user.lsp.settings.webdev" -- html, css, eslint, tsserver
 require "user.lsp.settings.shell" -- bashls
 require "user.lsp.settings.none_ls" -- null-ls (Special LSP glue for formatting and linting)
+require "user.lsp.settings.robot"
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
