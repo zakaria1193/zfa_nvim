@@ -51,7 +51,7 @@ return packer.startup(function(use)
 
   -- Explorer to replace netrw
   -- Press g? for help
-	use({ "kyazdani42/nvim-tree.lua" })
+	use({ "nvim-tree/nvim-tree.lua" })
 
   -- Front Page
 	use({ "goolord/alpha-nvim" })
