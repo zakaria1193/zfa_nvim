@@ -28,6 +28,9 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
 	return
 end
+-- Use nvim 0.9+ new loader with byte-compilation cache
+-- https://neovim.io/doc/user/lua.html#vim.loader
+if vim.loader then vim.loader.enable() end
 
 -- Have packer use a popup window
 packer.init({
@@ -71,9 +74,6 @@ return packer.startup(function(use)
   -- Project manager
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "moll/vim-bbye" })
-
-  -- Profiler -- call :LuaCacheProfile to run
-	use({ "lewis6991/impatient.nvim" })
 
   -- Commenting tools
 	use({ "numToStr/Comment.nvim" })
