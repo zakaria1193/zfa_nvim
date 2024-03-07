@@ -5,7 +5,7 @@ require'lspconfig'.robotframework_ls.setup{robot ={
         "/home/zfadli/repos/embedded/magellan/modules/automated-test-tools/python/lib",
         "/home/zfadli/repos/embedded/magellan/modules/python-emb-tools/python/lib/",
         "/home/zfadli/repos/embedded/magellan/modules/embedded_farm/python/lib",
-        "/home/zfadli/repos/embedded/magellan/python/lib"
+        "/home/zfadli/repos/embedded/magellan/python/lib",
+        "/home/zfadli/.local/lib/python3.10/site-packages/"
       },
-      language_server = { python = "/home/zfadli/repos/rf-ls-python.sh" }
 }}

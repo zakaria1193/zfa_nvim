@@ -1,4 +1,4 @@
-  vim.g.gutentags_generate_on_write = true
+  vim.g.gutentags_generate_on_write = false
   vim.g.gutentags_generate_on_new = true
   vim.g.gutentags_generate_on_missing = true
   vim.g.gutentags_generate_on_empty_buffer = false

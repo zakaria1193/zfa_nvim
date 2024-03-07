@@ -170,7 +170,6 @@ use({
   -- makes autindent, highlight, autoparing parenthesis ..
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		commit = "v0.9.0",
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	})
   -- Treesitter context
