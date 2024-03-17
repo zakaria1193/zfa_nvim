@@ -19,20 +19,15 @@ telescope.setup {
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-
-        ["<C-c>"] = actions.close,
-
-      -- NORMAL mode is not accessible following zfa's change of using esc = actions.close in insert mode
-      -- normal mode is not considered as actually useful
-        ["<esc>"] = actions.close,
-
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
 
+        ["<C-c>"] = actions.close,
+
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+        ["<C-x>"] = actions.select_horizontal, -- Send to a horizontal split
+        ["<C-v>"] = actions.select_vertical, -- Send to a vertical split
+        ["<C-t>"] = actions.select_tab, -- Send to a new tab
 
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
@@ -40,34 +35,30 @@ telescope.setup {
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
 
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        -- Selection for quickfix
+        ["<Tab>"] = actions.toggle_selection, -- Select entry
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
 
       n = {
         ["<esc>"] = actions.close,
+        ["<c-c>"] = actions.close,
+
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<Tab>"] = actions.toggle_selection,
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
         ["j"] = actions.move_selection_next,
         ["k"] = actions.move_selection_previous,
-        ["H"] = actions.move_to_top,
-        ["M"] = actions.move_to_middle,
-        ["L"] = actions.move_to_bottom,
-
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
+
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
 
@@ -76,8 +67,6 @@ telescope.setup {
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
-
-        ["?"] = actions.which_key,
       },
     },
   },

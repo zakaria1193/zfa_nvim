@@ -219,7 +219,9 @@ local mappings = {
     ["w"] = { "<cmd>Telescope grep_string word_match=-w theme=ivy<cr>", "Find exact word under cursor" },
     ["l"] = { "<cmd>Telescope live_grep<cr>", "Live Grep <C-space> for fuzzy filtering" },
     ["h"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File History" },
-    ["t"] = { "<cmd>Telescope treesitter <cr>", "Tags in file (using treesitter)"},
+    ["t"] = { "<cmd>Telescope treesitter <cr>", "Tags in file (using treesitter)" },
+    ["T"] = { "<cmd>Telescope tags <cr>", "Tags in file (using treesitter)" }
+
   },
 
   p = {
