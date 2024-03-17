@@ -215,6 +215,11 @@ local mappings = {
       "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Find files",
     },
+
+    ["F"] = {
+      "<cmd>lua require('telescope.builtin').find_files()<cr>",
+      "Find files with preview",
+    },
     ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["w"] = { "<cmd>Telescope grep_string word_match=-w theme=ivy<cr>", "Find exact word under cursor" },
     ["l"] = { "<cmd>Telescope live_grep<cr>", "Live Grep <C-space> for fuzzy filtering" },
