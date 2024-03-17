@@ -1,5 +1,5 @@
 --- Config for colorizer
---- colorizes colors in code
+--- colorizes colors in code such as `#ff0000`
 
 -- Attach to certain Filetypes, add special configuration for `html`
 -- Use `background` for everything else.
