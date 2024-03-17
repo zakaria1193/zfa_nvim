@@ -76,9 +76,6 @@ return packer.startup(function(use)
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
-  --  Creates parenthesis pairs
-	use({ "windwp/nvim-autopairs" })
-
   --- Interesting words
   use{'lfv89/vim-interestingwords'}
 
