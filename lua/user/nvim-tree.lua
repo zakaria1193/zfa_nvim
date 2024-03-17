@@ -6,7 +6,7 @@ end
 nvim_tree.setup {
   update_focused_file = {
     enable = true,
-    update_cwd = false,
+    update_cwd = true,
   },
   renderer = {
     root_folder_modifier = ":t",
@@ -37,14 +37,7 @@ nvim_tree.setup {
     },
   },
   diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
+    enable = false,
   },
   view = {
     adaptive_size = true,
