@@ -12,7 +12,7 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }
@@ -33,7 +33,8 @@ local mode = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
+	icons_enabled = true,
+  colored = true,
 	icon = nil,
 }
 
@@ -46,6 +47,11 @@ local branch = {
 local location = {
 	"location",
 	padding = 0,
+}
+
+local filename = {
+  "filename",
+  path = 1,
 }
 
 -- cool function for progress
@@ -62,23 +68,27 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local dirname = function()
+  return vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "ayu_dark",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "Trouble" },
 		always_divide_middle = true,
+    globalstatus = true,
 	},
 	sections = {
-		lualine_a = { branch, diff, diagnostics },
-		lualine_b = { mode },
-		lualine_c = { "vim.fn.getcwd()" ,
-                  require("dr-lsp").lspCount,
-                  require("dr-lsp").lspProgress },
+		lualine_a = { mode },
+    -- Fill filename with spaces to make it easier to read
+		lualine_b = { filename, branch },
+		lualine_c = {  dirname, diagnostics },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { spaces, "encoding", filetype },
+		lualine_x = { filetype, spaces, "encoding" },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
@@ -91,5 +101,7 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
-	extensions = {},
+	extensions = {
+    "mason"
+  },
 })
