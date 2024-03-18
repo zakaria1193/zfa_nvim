@@ -96,7 +96,6 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-path" }) -- path completions
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions, requires snipped engine (in snippets section)
 	use({ "hrsh7th/cmp-nvim-lua" }) -- nvim lua completions
-  use({ "hrsh7th/cmp-nvim-lsp-signature-help" }) -- signature helper
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" })
@@ -150,6 +149,11 @@ use({
   use({ "hrsh7th/cmp-nvim-lsp" })
   -- Trouble for diagnostics navigation
   use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
+
+  -- LSP signature shower
+  use {
+    "ray-x/lsp_signature.nvim",
+  }
 
   -- None LS for linter/formatter configuration
   use({ "nvimtools/none-ls.nvim" }) -- null-ls
