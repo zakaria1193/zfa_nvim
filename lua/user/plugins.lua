@@ -68,6 +68,9 @@ return packer.startup(function(use)
   -- Status bar
 	use({ "nvim-lualine/lualine.nvim" })
 
+  -- Scroll
+  use('karb94/neoscroll.nvim')
+
   -- Project manager
 	use({ "ahmedkhalf/project.nvim" })
 
