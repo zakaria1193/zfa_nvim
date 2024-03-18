@@ -23,6 +23,8 @@ telescope.setup {
         ["<Up>"] = actions.move_selection_previous,
 
         ["<C-c>"] = actions.close,
+        ["<esc>"] = actions.close,
+        -- WARNING: This will block entering normal mode, it's considered as not useful
 
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal, -- Send to a horizontal split
@@ -41,31 +43,32 @@ telescope.setup {
         ["<C-l>"] = actions.complete_tag,
       },
 
+
       n = {
-        ["<esc>"] = actions.close,
-        ["<c-c>"] = actions.close,
-
-        ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
-
-        ["<Tab>"] = actions.toggle_selection,
-        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-
-        ["j"] = actions.move_selection_next,
-        ["k"] = actions.move_selection_previous,
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-
-        ["gg"] = actions.move_to_top,
-        ["G"] = actions.move_to_bottom,
-
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
-
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+        -- ["<esc>"] = actions.close,
+        -- ["<c-c>"] = actions.close,
+        --
+        -- ["<CR>"] = actions.select_default,
+        -- ["<C-x>"] = actions.select_horizontal,
+        -- ["<C-v>"] = actions.select_vertical,
+        -- ["<C-t>"] = actions.select_tab,
+        --
+        -- ["<Tab>"] = actions.toggle_selection,
+        -- ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        --
+        -- ["j"] = actions.move_selection_next,
+        -- ["k"] = actions.move_selection_previous,
+        -- ["<Down>"] = actions.move_selection_next,
+        -- ["<Up>"] = actions.move_selection_previous,
+        --
+        -- ["gg"] = actions.move_to_top,
+        -- ["G"] = actions.move_to_bottom,
+        --
+        -- ["<C-u>"] = actions.preview_scrolling_up,
+        -- ["<C-d>"] = actions.preview_scrolling_down,
+        --
+        -- ["<PageUp>"] = actions.results_scrolling_up,
+        -- ["<PageDown>"] = actions.results_scrolling_down,
       },
     },
   },
