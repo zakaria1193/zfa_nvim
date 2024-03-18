@@ -70,6 +70,8 @@ return packer.startup(function(use)
 
   -- Project manager
 	use({ "ahmedkhalf/project.nvim" })
+
+  -- Tool for closing other buffers
 	use({ "moll/vim-bbye" })
 
   -- Commenting tools
@@ -157,7 +159,6 @@ use({
 	-- Telescope
   use { "nvim-telescope/telescope.nvim" }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'gnfisher/nvim-telescope-ctags-plus'}
 
 	-- Treesitter
   -- Helps nvim deeper understanding of the code
@@ -173,7 +174,7 @@ use({
   -- Treesitter context
   use({ "nvim-treesitter/nvim-treesitter-context" })
 
-  -- make parenthesis in rainbows to tell matching easily
+  -- Treesitter rainbow - make parenthesis in rainbows to tell matching easily
   use({"p00f/nvim-ts-rainbow"})
 
 	-- Git
