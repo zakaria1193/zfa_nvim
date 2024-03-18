@@ -139,9 +139,9 @@ return packer.startup(function(use)
   }
 
   -- ChatGPT
-use({
-    "robitx/gp.nvim"
-})
+  use({
+      "robitx/gp.nvim"
+  })
 
   -- LSP servers installer
   use { 'williamboman/mason.nvim', run = function() pcall(vim.cmd, 'MasonUpdate') end }
