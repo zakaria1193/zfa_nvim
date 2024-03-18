@@ -17,7 +17,7 @@ configs.setup {
   -- List of parsers to ignore installing (or "all")
   -- Warning /!\:
   -- 'comment' is a very slow parser, treesitter highlighting will be very slow if it installed
-  ignore_install = { "comment" },
+  ignore_install = { "comment", "javascript" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
