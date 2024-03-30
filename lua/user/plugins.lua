@@ -74,9 +74,6 @@ return packer.startup(function(use)
   -- Project manager
 	use({ "ahmedkhalf/project.nvim" })
 
-  -- Tool for closing other buffers
-	use({ "moll/vim-bbye" })
-
   -- Commenting tools
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
