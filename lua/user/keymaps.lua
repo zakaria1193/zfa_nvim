@@ -43,6 +43,10 @@ keymap("n", "<C-]>", "g<C-]>", opts)
 keymap("n", "]q", ":cnext<CR>", opts)
 keymap("n", "[q", ":cprevious<CR>", opts)
 
+-- Enable/Disable copilot ]p and [p
+keymap("n", "]p", "<cmd>Copilot enable<CR>", opts)
+keymap("n", "[p", "<cmd>Copilot disable<CR>", opts)
+
 ------------------------------------------------------------------------------------------------
 -- Insert --
 -- 
