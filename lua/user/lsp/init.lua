@@ -13,6 +13,7 @@ require("mason-lspconfig").setup(
       "eslint",
       "tsserver",
       "ruff_lsp",
+      "rust_analyzer",
     },
   }
 )
@@ -26,6 +27,7 @@ require "user.lsp.settings.webdev" -- html, css, eslint, tsserver
 require "user.lsp.settings.shell" -- bashls
 require "user.lsp.settings.none_ls" -- null-ls (Special LSP glue for formatting and linting)
 require "user.lsp.settings.robot"
+require "user.lsp.settings.rust"
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
