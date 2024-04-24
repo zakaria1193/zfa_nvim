@@ -171,11 +171,7 @@ return packer.startup(function(use)
   -- Helps nvim deeper understanding of the code
   -- makes autindent, highlight, autoparing parenthesis ..
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
+        'nvim-treesitter/nvim-treesitter'
     }
 
   -- Treesitter context
