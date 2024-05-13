@@ -177,6 +177,9 @@ return packer.startup(function(use)
   -- Treesitter rainbow - make parenthesis in rainbows to tell matching easily
   use({"p00f/nvim-ts-rainbow"})
 
+  -- Highlighter (<f-Enter> to highlight word under cursor in visual mode)`
+  use({ 'azabiong/vim-highlighter' })
+
 	-- Git
 	use({ "lewis6991/gitsigns.nvim"})
   use({ "iberianpig/tig-explorer.vim" })
