@@ -88,7 +88,8 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
-  use({ "lunarvim/darkplus.nvim", commit = "cb4340a802e68cb80feb81c5ffbc1c9d2af8494f"}) -- Dark Theme Do not update to version of novembre 2022 (Broken)
+  use { "catppuccin/nvim", as = "catppuccin" }
+
 
 	-- Completion plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
