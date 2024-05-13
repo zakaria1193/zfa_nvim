@@ -209,7 +209,7 @@ local mappings = {
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["w"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["w"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
   ["<S-w>"] = { "<cmd>BufOnly<CR>", "Close other Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["r"] = { "<cmd>ProjectRoot<CR>", "cwd to Project root" },
