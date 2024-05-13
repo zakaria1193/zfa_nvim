@@ -148,13 +148,9 @@ return packer.startup(function(use)
   use({ "neovim/nvim-lspconfig" })
   -- LSP autocomplete
   use({ "hrsh7th/cmp-nvim-lsp" })
+  use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
   -- Trouble for diagnostics navigation
   use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
-
-  -- LSP signature shower
-  use {
-    "ray-x/lsp_signature.nvim",
-  }
 
   -- None LS for linter/formatter configuration
   use({ "nvimtools/none-ls.nvim" }) -- null-ls
