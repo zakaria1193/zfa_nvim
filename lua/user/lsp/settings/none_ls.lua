@@ -15,7 +15,6 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.diagnostics.cppcheck,
-    null_ls.builtins.diagnostics.bashls,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.pylint.with({
