@@ -1,5 +1,4 @@
-local status, null_ls = pcall(require, "none-ls")
-if (not status) then return end
+local status, null_ls = pcall(require, "null-ls")
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -66,4 +65,5 @@ require("mason-null-ls").setup({
     "cppcheck",
     "markdownlint",
     "prettierd"
-}})
+},
+automatic_installation = true})
