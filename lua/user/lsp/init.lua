@@ -2,19 +2,9 @@
 require("mason").setup()
 require("mason-lspconfig").setup(
   {
-    -- Use names from https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
-    ensure_installed = {
-      "bashls",
-      "lua_ls",
-      "jsonls",
-      "clangd",
-      "html",
-      "cssls",
-      "eslint",
-      "tsserver",
-      "ruff_lsp",
-      "rust_analyzer",
-    },
+    -- Do not use ensure_installed, instead auto install anything configured
+    -- through lspconfig.
+    automatic_installation = true,
   }
 )
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
