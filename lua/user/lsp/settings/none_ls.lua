@@ -1,15 +1,4 @@
-local status, null_ls = pcall(require, "null-ls")
-
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      return client.name == "null-ls"
-    end,
-    bufnr = bufnr,
-  })
-end
+local _, null_ls = pcall(require, "null-ls")
 
 null_ls.setup({
   sources = {
@@ -26,24 +15,11 @@ null_ls.setup({
     null_ls.builtins.formatting.black,
   },
   root_dir = require("null-ls.utils").root_pattern(".null-ls-root"),
-  on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
-        buffer = bufnr,
-        callback = function()
-          lsp_formatting(bufnr)
-        end,
-      })
-    end
-  end,
 })
 
 -- Ensure formatter are installed using mason-null-ls
 -- WARNING: must be called after null_ls.setup
 require("mason-null-ls").setup({automatic_installation = true})
-
 
 -- Fix encoding issues with null-ls
 -- For some reason this doesn't work in the first setup call
@@ -52,11 +28,3 @@ null_ls.setup({
     new_client.offset_encoding = 'utf-32'
   end,
 })
-
-vim.api.nvim_create_user_command(
-  'DisableLspFormatting',
-  function()
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })
-  end,
-  { nargs = 0 }
-)
