@@ -40,6 +40,11 @@ null_ls.setup({
   end,
 })
 
+-- Ensure formatter are installed using mason-null-ls
+-- WARNING: must be called after null_ls.setup
+require("mason-null-ls").setup({automatic_installation = true})
+
+
 -- Fix encoding issues with null-ls
 -- For some reason this doesn't work in the first setup call
 null_ls.setup({
@@ -55,14 +60,3 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = 0 }
 )
-
--- Ensure formatter are installed using mason-null-ls
-require("mason-null-ls").setup({
-    ensure_installed = {
-    "mypy",
-    "bashls",
-    "cppcheck",
-    "markdownlint",
-    "prettierd"
-},
-automatic_installation = true})
