@@ -98,6 +98,21 @@ vim.api.nvim_create_user_command("WQ", "wq", {})
 ------------------------------------------------------------------------------------------------
 --------------------------------WHICHKEY--------------------------------------------------------
 ------------------------------------------------------------------------------------------------
+-- Functions for whichkkey
+
+function Print_lsp_server_capabilities()
+  local client_id = vim.lsp.get_active_clients()
+  if next(client_id) == nil then
+    print("No active LSP clients")
+    return
+  end
+  local client = client_id[1]
+  if client ~= nil then
+    print(vim.inspect(client.server_capabilities))
+  end
+end
+------------------------------------------------------------------------------------------------
+
 
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
@@ -278,6 +293,7 @@ local mappings = {
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
     I = { "<cmd>LspInfo<cr>", "Info" },
+    c = { "<cmd>lua Print_lsp_server_capabilities()<cr>", "Server Capabilities" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
