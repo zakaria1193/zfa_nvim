@@ -9,6 +9,9 @@ require("mason-lspconfig").setup(
 )
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+-- Warning: setup handlers will call setup for all lsp servers
+-- they will still be called again later in "Configure LSP"
+-- FIXME is this a problem?
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
 		require("lspconfig")[server_name].setup({
