@@ -186,6 +186,7 @@ local opts = {
       schemas = extended_schemas,
     },
   },
+  -- FIXME make sure setup is expected
   setup = {
     commands = {
       Format = {
