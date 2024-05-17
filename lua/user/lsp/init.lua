@@ -41,13 +41,14 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 -- see https://github.com/neovim/neovim/issues/23291#issuecomment-1560742827
 require('vim.lsp._watchfiles')._watchfunc = function(_, _, _) return true end
 
--- LSP signature / hover styling
+-- LSP hover styling
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover,
-  {border = 'rounded'}
+  {border = 'rounded', focusable = false}
 )
 
+-- LSP signature help styling
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
   vim.lsp.handlers.signature_help,
-  {border = 'rounded'}
+  {border = 'double', focusable = false}
 )
