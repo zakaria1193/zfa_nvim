@@ -7,18 +7,16 @@ require("mason-lspconfig").setup(
     automatic_installation = true,
   }
 )
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Warning: setup handlers will call setup for all lsp servers
--- they will still be called again later in "Configure LSP"
--- FIXME is this a problem?
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		require("lspconfig")[server_name].setup({
-			capabilities = capabilities,
-		})
-	end,
-})
+-- LSP servers and clients are able to communicate to each other what features they support.
+--  By default, Neovim client doesn't support everything that is in the LSP specification.
+--  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
+--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+Lsp_client_capabilities = vim.lsp.protocol.make_client_capabilities()
+lsp_client_capabilities = vim.tbl_deep_extend('force', Lsp_client_capabilities, require('cmp_nvim_lsp').default_capabilities())
+
+-- Warning: Do not use `require("mason-lspconfig").setup_handlers`, it's incompatible with calling
+-- `require("lspconfig").<server>.setup` directly which we do below.
 
 -- Configure LSP
 require "user.lsp.settings.lua_ls" -- lua_ls

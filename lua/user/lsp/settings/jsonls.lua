@@ -177,7 +177,7 @@ end
 
 local extended_schemas = extend(schemas, default_schemas)
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = Lsp_client_capabilities
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local opts = {
