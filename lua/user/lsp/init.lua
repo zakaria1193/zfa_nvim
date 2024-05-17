@@ -15,6 +15,16 @@ require("mason-lspconfig").setup(
 Lsp_client_capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp_client_capabilities = vim.tbl_deep_extend('force', Lsp_client_capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+local lspconfig = require'lspconfig'
+lspconfig.util.default_config = vim.tbl_extend(
+  "force",
+  lspconfig.util.default_config,
+  {
+    capabilities = lsp_client_capabilities -- Add cmp capabilities to default lsp capabilities
+  }
+)
+
+
 -- Warning: Do not use `require("mason-lspconfig").setup_handlers`, it's incompatible with calling
 -- `require("lspconfig").<server>.setup` directly which we do below.
 
@@ -31,7 +41,6 @@ require "user.lsp.settings.rust"
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
