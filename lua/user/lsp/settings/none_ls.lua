@@ -19,7 +19,8 @@ null_ls.setup({
 
 -- Ensure formatter are installed using mason-null-ls
 -- WARNING: must be called after null_ls.setup
-require("mason-null-ls").setup({automatic_installation = true})
+-- Everuthing is installed except cppcheck (because it's not available on mason as of now)
+require("mason-null-ls").setup({automatic_installation = {exclude = {"cppcheck"}}})
 
 -- Fix encoding issues with null-ls
 -- For some reason this doesn't work in the first setup call
