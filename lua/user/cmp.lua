@@ -47,6 +47,11 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+-- Override default <C-N> and <C-P> autocomplete mappings to nothing
+-- so i am obliged to use <c-space> to open the autocomplete menu
+vim.api.nvim_set_keymap("i", "<C-n>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-p>", "<Nop>", { noremap = true, silent = true })
+
 cmp.setup {
   snippet = {
     expand = function(args)
