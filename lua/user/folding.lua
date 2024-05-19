@@ -1,3 +1,4 @@
+-- Enable folding
 if vim.fn.has("nvim-0.10") == 1 then
 -- Treesitter folding 
   vim.opt.foldmethod = "expr"
@@ -12,3 +13,6 @@ end
 vim.cmd([[
   autocmd FileType TelescopeResults setlocal nofoldenable
 ]])
+
+-- Disable folding by default
+vim.o.foldenable = false
