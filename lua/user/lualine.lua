@@ -3,10 +3,6 @@ if not status_ok then
 	return
 end
 
-local hide_in_width = function()
-	return vim.fn.winwidth(0) > 80
-end
-
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
@@ -15,13 +11,6 @@ local diagnostics = {
 	colored = true,
 	update_in_insert = false,
 	always_visible = true,
-}
-
-local diff = {
-	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
 }
 
 local mode = {
