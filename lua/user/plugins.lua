@@ -193,9 +193,6 @@ return packer.startup(function(use)
   -- Highlight CSS colors
   use({ "norcalli/nvim-colorizer.lua" })
 
-  -- Rust tools
-  use({ "simrat39/rust-tools.nvim" })
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
