@@ -2,7 +2,11 @@ local _, null_ls = pcall(require, "null-ls")
 
 null_ls.setup({
   sources = {
+    -- Formatters
     null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.isort,
+    null_ls.builtins.formatting.black,
+    --- Diagnostics
     null_ls.builtins.diagnostics.cppcheck,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.mypy,
@@ -11,8 +15,6 @@ null_ls.setup({
         diagnostic.code = diagnostic.message_id
       end,
     }),
-    null_ls.builtins.formatting.isort,
-    null_ls.builtins.formatting.black,
   },
   root_dir = require("null-ls.utils").root_pattern(".null-ls-root"),
 })
