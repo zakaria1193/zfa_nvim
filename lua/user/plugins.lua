@@ -145,7 +145,9 @@ return packer.startup(function(use)
   use({ "neovim/nvim-lspconfig" })
   -- LSP autocomplete
   use({ "hrsh7th/cmp-nvim-lsp" })
-  use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
+  -- LSP signature
+  use({ "ray-x/lsp_signature.nvim" })
+
   -- Trouble for diagnostics navigation
   use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
 

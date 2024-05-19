@@ -96,7 +96,6 @@ cmp.setup {
   sources = {
     -- Order is important = Order it is shown
     -- Add new sources to this
-    { name = 'nvim_lsp_signature_help' },
     { name = "nvim_lsp", max_item_count = 3, keyword_length = 3 },
     { name = "luasnip", max_item_count = 2 },
     { name = "buffer",  max_item_count = 3, keyword_length = 3 },

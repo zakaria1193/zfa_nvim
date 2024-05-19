@@ -54,8 +54,20 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   {border = 'rounded', focusable = false}
 )
 
--- LSP signature help styling
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {border = 'double', focusable = false}
-)
+-- Setup LSP signature on LSP attach event
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if vim.tbl_contains({ 'null-ls' }, client.name) then  -- blacklist lsp
+      return
+    end
+    require("lsp_signature").on_attach({
+      bind = true, -- This is mandatory, otherwise border config won't get registered.
+      handler_opts = {
+        border = "double"
+      }
+    }, bufnr)
+  end,
+})
+
