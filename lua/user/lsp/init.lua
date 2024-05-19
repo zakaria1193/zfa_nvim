@@ -41,8 +41,6 @@ require "user.lsp.settings.rust"
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 
 -- Disable watchfunc for LSP for CPU usage reasons
