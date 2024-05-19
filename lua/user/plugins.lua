@@ -160,12 +160,16 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim" }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-	-- Treesitter
-  -- Helps nvim deeper understanding of the code
-  -- makes autindent, highlight, autoparing parenthesis ..
-    use {
-        'nvim-treesitter/nvim-treesitter'
-    }
+-- Treesitter
+-- treesitter is native to neovim, but this plugin adds a wrapper for auto installing
+-- and managing parsers, as well as additional higher level features
+-- nvim treesitter parsers the code and genertes a syntax tree for it
+-- it creates groups for each syntax element, which can be used to apply colors
+-- and other text properties.
+-- The plugins use these groups to apply colors and other text properties
+  use {
+      'nvim-treesitter/nvim-treesitter'
+  }
 
   -- Treesitter context
   use({ "nvim-treesitter/nvim-treesitter-context" })
