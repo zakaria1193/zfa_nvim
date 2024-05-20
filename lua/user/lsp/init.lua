@@ -13,14 +13,14 @@ require("mason-lspconfig").setup(
 --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
 --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
 Lsp_client_capabilities = vim.lsp.protocol.make_client_capabilities()
-lsp_client_capabilities = vim.tbl_deep_extend('force', Lsp_client_capabilities, require('cmp_nvim_lsp').default_capabilities())
+Lsp_client_capabilities = vim.tbl_deep_extend('force', Lsp_client_capabilities, require('cmp_nvim_lsp').default_capabilities())
 
 local lspconfig = require'lspconfig'
 lspconfig.util.default_config = vim.tbl_extend(
   "force",
   lspconfig.util.default_config,
   {
-    capabilities = lsp_client_capabilities -- Add cmp capabilities to default lsp capabilities
+    capabilities = Lsp_client_capabilities -- Add cmp capabilities to default lsp capabilities
   }
 )
 
