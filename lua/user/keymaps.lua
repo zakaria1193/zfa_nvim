@@ -301,12 +301,6 @@ local mappings = {
       "Workspace Symbols",
     },
   },
-  d = {
-    name = "Diagnostics",
-    l = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
-    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
-    q = { "<cmd>TroubleClose<cr>", "Close Trouble" },
-  },
   s = {
     name = "Search with Telescope",
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },

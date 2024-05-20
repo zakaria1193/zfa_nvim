@@ -39,8 +39,6 @@ Not minimalist enough for an embedded Linux editor.
 Language Server Protocol support for C/C++, Python, and Lua.
 Very good for real time code linting/analysis and completion.
 
-I use `trouble.nvim` to show the diagnostics in a nice way.
-
 #### C/C++
 
 Uses Clangd as LSP server.

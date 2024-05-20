@@ -148,9 +148,6 @@ return packer.startup(function(use)
   -- LSP signature
   use({ "ray-x/lsp_signature.nvim" })
 
-  -- Trouble for diagnostics navigation
-  use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
-
   -- None LS for linter/formatter configuration
   use({ "nvimtools/none-ls.nvim" }) -- null-ls
   use({"jay-babu/mason-null-ls.nvim"}) -- Ensure linters and formatters are installed
@@ -199,3 +196,4 @@ return packer.startup(function(use)
 		require("packer").sync()
 	end
 end)
+

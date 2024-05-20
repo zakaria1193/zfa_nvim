@@ -67,7 +67,7 @@ lualine.setup({
 		theme = "ayu_dark",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "Trouble" },
+		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
     globalstatus = true,
 	},
