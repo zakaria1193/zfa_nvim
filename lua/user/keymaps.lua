@@ -92,7 +92,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- LSP Functions for whichkkey
 
 function Print_lsp_server_capabilities()
-  local client_id = vim.lsp.get_active_clients()
+  local client_id = vim.lsp.get_clients()
   if next(client_id) == nil then
     print("No active LSP clients")
     return
