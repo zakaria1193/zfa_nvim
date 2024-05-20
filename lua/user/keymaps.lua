@@ -89,7 +89,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 ------------------------------------------------------------------------------------------------
 --------------------------------WHICHKEY--------------------------------------------------------
 ------------------------------------------------------------------------------------------------
--- Functions for whichkkey
+-- LSP Functions for whichkkey
 
 function Print_lsp_server_capabilities()
   local client_id = vim.lsp.get_active_clients()
@@ -107,6 +107,10 @@ function Print_lsp_server_capabilities()
       vim.api.nvim_buf_set_lines(0, -1, -1, false, { line })
     end
   end
+end
+
+function Toggle_inlay_hints()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end
 ------------------------------------------------------------------------------------------------
 
@@ -281,6 +285,7 @@ local mappings = {
     t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
     h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+    H = { "<cmd>lua Toggle_inlay_hints()<cr>", "Inlay Hints toggle" },
     r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
     R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     n = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },

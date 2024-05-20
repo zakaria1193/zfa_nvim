@@ -43,6 +43,11 @@ require "user.lsp.settings.rust"
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 
+-- Inlay hints toggler
+vim.keymap.set('n', 'H', Toggle_inlay_hints)
+-- Enable inlay hints by default
+vim.lsp.inlay_hint.enable()
+
 -- Disable watchfunc for LSP for CPU usage reasons
 -- see https://github.com/neovim/neovim/issues/23291#issuecomment-1560742827
 require('vim.lsp._watchfiles')._watchfunc = function(_, _, _) return true end
