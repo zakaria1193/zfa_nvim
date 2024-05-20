@@ -12,11 +12,6 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
@@ -59,8 +54,8 @@ cmp.setup {
     end,
   },
   mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(), -- FIXME shouldnt open omni
-    ["<C-n>"] = cmp.mapping.select_next_item(), -- FIXME shouldnt open omni
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -83,12 +78,10 @@ cmp.setup {
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
-        -- Add new sources to this
-        copilot = "[Copilot]",
-      })[entry.source.name]
+        nvim_lua = "[nvim config cmp]",
+      })[entry.source.name] or entry.source.name
       return vim_item
     end,
   },
@@ -96,12 +89,18 @@ cmp.setup {
   sources = {
     -- Order is important = Order it is shown
     -- Add new sources to this
-    { name = "nvim_lsp", keyword_length = 3 },
-    { name = "luasnip", max_item_count = 2 },
-    { name = "buffer",  max_item_count = 3, keyword_length = 3 },
-    { name = "copilot", keyword_length = 1},
-    { name = "path" },
-    { name = 'nvim_lua' }, -- hrsh7th / cmp-nvim-lua
+    { name = "nvim_lsp" },
+    { name = "path" }, -- hrsh7th / cmp-path
+    { name = "luasnip"  }, -- hrsh7th / cmp-luasnip (for snippets)
+    { name = 'nvim_lua' }, -- hrsh7th / cmp-nvim-lua (for nvim API completion, FIXME to replace by lua_lsp ?)
+    { name = "cmp-nvim-lsp" }, -- hrsh7th / cmp-nvim-lsp
+    { name = "buffer", option = {
+        get_bufnrs = function()
+          -- Consider all open buffers
+          return vim.api.nvim_list_bufs()
+        end
+      }
+    }
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

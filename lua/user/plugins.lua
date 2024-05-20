@@ -90,10 +90,11 @@ return packer.startup(function(use)
 
 	-- Completion plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
 	use({ "hrsh7th/cmp-path" }) -- path completions
+	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions, requires snipped engine (in snippets section)
-	use({ "hrsh7th/cmp-nvim-lua" }) -- nvim lua completions
+	use({ "hrsh7th/cmp-nvim-lua" }) -- nvim lua completions (such as vim.lsp.*...)
+  use({ "hrsh7th/cmp-nvim-lsp" }) -- LSP autocomplete
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" })
@@ -143,8 +144,6 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" }
   -- LSP configurator
   use({ "neovim/nvim-lspconfig" })
-  -- LSP autocomplete
-  use({ "hrsh7th/cmp-nvim-lsp" })
   -- LSP signature
   use({ "ray-x/lsp_signature.nvim" })
 
