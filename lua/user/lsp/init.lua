@@ -46,7 +46,7 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 -- Inlay hints toggler
 vim.keymap.set('n', 'H', Toggle_inlay_hints)
 -- Enable inlay hints by default
-vim.lsp.inlay_hint.enable()
+vim.lsp.inlay_hint.enable(false) -- true doesn't work #TODO why ?
 
 -- Disable watchfunc for LSP for CPU usage reasons
 -- see https://github.com/neovim/neovim/issues/23291#issuecomment-1560742827
