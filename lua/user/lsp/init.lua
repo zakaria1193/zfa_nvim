@@ -75,3 +75,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+
+-- Setup Diagnostics settings
+vim.diagnostic.config({
+  virtual_text = {
+    source = "if_many",
+    prefix = '● ',
+  },
+  underline = true,
+  float = {
+    focusable = false,
+    style = 'minimal',
+    border = 'rounded',
+    source = 'always',
+  },
+})
