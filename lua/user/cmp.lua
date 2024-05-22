@@ -94,12 +94,14 @@ cmp.setup {
     { name = "luasnip"  }, -- hrsh7th / cmp-luasnip (for snippets)
     { name = 'nvim_lua' }, -- hrsh7th / cmp-nvim-lua (for nvim API completion, FIXME to replace by lua_lsp ?)
     { name = "cmp-nvim-lsp" }, -- hrsh7th / cmp-nvim-lsp
-    { name = "buffer", option = {
+    { name = "buffer",
+      option = {
         get_bufnrs = function()
           -- Consider all open buffers
           return vim.api.nvim_list_bufs()
         end
-      }
+      },
+      max_items_count = 4 -- Only allow few buffer suggestions otherwise it will crowd
     }
   },
   confirm_opts = {
