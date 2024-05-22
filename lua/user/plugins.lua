@@ -177,7 +177,6 @@ return packer.startup(function(use)
   use({ 'azabiong/vim-highlighter' })
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim"})
   use({ "iberianpig/tig-explorer.vim" })
 
   -- Doxygen
