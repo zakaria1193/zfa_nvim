@@ -261,7 +261,6 @@ local mappings = {
     name = "Git",
     -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" }, -- Depends on termtoggle removed plugin
     b = { "<cmd>TigBlame<cr>", "Tig blame" },
-    B = { "<cmd>GitBlameOpenCommitURL<cr>", "Blame & Open commit URL" },
     s = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     h = { "<cmd>TigOpenCurrentFile<cr>", "Tig file history" },
   },

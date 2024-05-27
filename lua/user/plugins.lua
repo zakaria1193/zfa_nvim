@@ -178,7 +178,6 @@ return packer.startup(function(use)
 
 	-- Git
   use({ "iberianpig/tig-explorer.vim" })
-  use({ 'f-person/git-blame.nvim' })
 
   -- Doxygen
   use({ "vim-scripts/DoxygenToolkit.vim" })
