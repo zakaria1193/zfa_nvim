@@ -199,6 +199,12 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
+  d = {
+    name = "Diagnostics",
+    ["d"] = { "<cmd>lua vim.diagnostic.hide(nil, 0)<CR>", "Hide"},
+    ["e"] = { "<cmd>lua vim.diagnostic.show(nil, 0)<CR>", "Show"},
+    ["q"] = { "<cmd>lua vim.diagnostic.setqflist()<CR>", "as quickfix list"}
+  },
   c = {
     name = "ChatGPT/Copilot",
     ["c"] = {
