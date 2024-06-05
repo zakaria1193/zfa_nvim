@@ -80,7 +80,7 @@ cmp.setup {
         nvim_lsp = "[LSP]",
         buffer = "[Buffer]",
         path = "[Path]",
-        nvim_lua = "[nvim config cmp]",
+        nvim_lua = "[vim.* lua cmp]",
       })[entry.source.name] or entry.source.name
       return vim_item
     end,
@@ -89,10 +89,10 @@ cmp.setup {
   sources = {
     -- Order is important = Order it is shown
     -- Add new sources to this
+    { name = 'nvim_lua' }, -- hrsh7th / cmp-nvim-lua (for nvim lua API completion, better than raw lua LSP), only applicable for lua files
     { name = "nvim_lsp" },
     { name = "path" }, -- hrsh7th / cmp-path
     { name = "luasnip"  }, -- hrsh7th / cmp-luasnip (for snippets)
-    { name = 'nvim_lua' }, -- hrsh7th / cmp-nvim-lua (for nvim API completion, FIXME to replace by lua_lsp ?)
     { name = "cmp-nvim-lsp" }, -- hrsh7th / cmp-nvim-lsp
     { name = "buffer",
       option = {
