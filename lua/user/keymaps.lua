@@ -105,7 +105,6 @@ function Print_lsp_server_capabilities()
   end
   local client = client_id[1]
   if client ~= nil then
-
     local cap = vim.inspect(client.server_capabilities)
     -- Print cap to buffer (it has newline)
     vim.api.nvim_command("new")
