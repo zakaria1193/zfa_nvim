@@ -116,7 +116,7 @@ function Print_lsp_server_capabilities()
 end
 
 function Toggle_inlay_hints()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
 end
 ------------------------------------------------------------------------------------------------
 
