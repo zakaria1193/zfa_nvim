@@ -47,6 +47,12 @@ keymap("n", "[q", ":cprevious<CR>", opts)
 keymap("n", "]p", "<cmd>Copilot enable<CR>", opts)
 keymap("n", "[p", "<cmd>Copilot disable<CR>", opts)
 
+-- LSP Hover (Also present with whichkey but this is for quick access)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+
+-- Inlay hints toggler (Also present with whichkey but this is for quick access)
+vim.keymap.set('n', 'H', Toggle_inlay_hints)
+
 ------------------------------------------------------------------------------------------------
 -- Insert --
 
