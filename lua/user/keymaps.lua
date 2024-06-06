@@ -18,6 +18,8 @@ vim.g.mapleader = ","
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+--
+--
 
 ------------------------------------------------------------------------------------------------
 -- Normal --
@@ -25,7 +27,7 @@ vim.g.mapleader = ","
 -- to make full use of whichkey
 
 -- Navigate buffers
-keymap("n", "<C-PageDown>",   ":bnext<CR>", opts)
+keymap("n", "<C-PageDown>", ":bnext<CR>", opts)
 keymap("n", "<C-PageUp>", ":bprevious<CR>", opts)
 
 -- Clear highlighting
@@ -51,7 +53,7 @@ keymap("n", "[p", "<cmd>Copilot disable<CR>", opts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 
 -- Inlay hints toggler (Also present with whichkey but this is for quick access)
-vim.keymap.set('n', 'H', Toggle_inlay_hints)
+vim.keymap.set('n', 'H', require('user.lsp.keymaps_helpers').toggle_inlay_hints)
 
 ------------------------------------------------------------------------------------------------
 -- Insert --
@@ -87,36 +89,12 @@ keymap("v", "<F3>", "<cmd>'<,'>GpImplement<CR>", opts)
 
 ------------------------------------------------------------------------------------------------
 -- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+-- None
 
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
 --------------------------------WHICHKEY--------------------------------------------------------
 ------------------------------------------------------------------------------------------------
--- LSP Functions for whichkkey
-
-function Print_lsp_server_capabilities()
-  local client_id = vim.lsp.get_clients()
-  if next(client_id) == nil then
-    print("No active LSP clients")
-    return
-  end
-  local client = client_id[1]
-  if client ~= nil then
-    local cap = vim.inspect(client.server_capabilities)
-    -- Print cap to buffer (it has newline)
-    vim.api.nvim_command("new")
-    for line in cap:gmatch("[^\r\n]+") do
-      vim.api.nvim_buf_set_lines(0, -1, -1, false, { line })
-    end
-  end
-end
-
-function Toggle_inlay_hints()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-end
 ------------------------------------------------------------------------------------------------
 
 
@@ -208,7 +186,7 @@ local mappings = {
     name = "Diagnostics",
     ["d"] = { "<cmd>lua vim.diagnostic.hide(nil, 0)<CR>", "Hide"},
     ["e"] = { "<cmd>lua vim.diagnostic.show(nil, 0)<CR>", "Show"},
-    ["q"] = { "<cmd>lua vim.diagnostic.setqflist()<CR>", "as quickfix list"}
+    ["q"] = { "<cmd>lua vim.diagnostic.setqflist()<CR>", "as quickfix list"},
   },
   c = {
     name = "ChatGPT/Copilot",
@@ -296,21 +274,25 @@ local mappings = {
     t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
     h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
-    H = { "<cmd>lua Toggle_inlay_hints()<cr>", "Inlay Hints toggle" },
     r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
     R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    n = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-    N = { "<cmd>NullLsInfo<cr>", "NullLs Info" },
+    g = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-    I = { "<cmd>LspInfo<cr>", "Info" },
-    c = { "<cmd>lua Print_lsp_server_capabilities()<cr>", "Server Capabilities" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+
+  },
+  L = {
+    name = "LSP Setup",
+    n = { "<cmd>NullLsInfo<cr>", "NullLs Info" },
+    i = { "<cmd>LspInfo<cr>", "Info" },
+    c = { "<cmd>lua require('user.lsp.keymaps_helpers').print_lsp_server_capabilities()<cr>", "Server Capabilities" },
+    h = { "<cmd>lua require('user.lsp.keymaps_helpers').toggle_inlay_hints()<cr>", "Inlay Hints toggle" },
   },
   s = {
     name = "Search with Telescope",
