@@ -193,15 +193,10 @@ local mappings = {
     ["c"] = {
       name = "ChatGPT",
       ["n"] = { "<cmd>GpChatNew<CR>", "CGPT new chat"},
+      ["c"] = { "<cmd>GpChatToggle<CR>", "CGPT toggle chat"},
+      ["a"] = { "<cmd>GpAgent<cr>", "Current Agent" },
       ["g"] = { "<cmd>GpNextAgent<cr>", "Next Agent" },
-      ["c"] = { "<cmd>GpAgent<cr>", "Current Agent" },
-      ["w"] = { "<cmd>GpWhisper<cr>", "Voice chat" },
       ["x"] = { "<cmd>GpContext<cr>", "Edit repo ctx file"},
-      ["a"] = { "<cmd>GpAppend<cr>", "Append to repo ctx file"},
-      ["p"] = { "<cmd>GpPrepend<cr>", "Prepend to repo ctx file"},
-      ["F1"] = {"", "Visual mode - Paste and chat"},
-      ["F2"] = {"", "Visual mode - Rewrite"},
-      ["F3"] = {"", "Visual mode - Implement"},
     },
     ["p"] = {
       name = "Copilot",
