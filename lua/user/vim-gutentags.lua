@@ -68,6 +68,8 @@
        '**/firmware/constants/*',
        '**/firmware/generic-embedded/*',
        '**/firmware-bitcloud/generic-embedded/*',
+       '**/simplicity_sdk/*',
+       '**/gecko_sdk/*',
        '*/nwk.c',
        '*/aps.c',
        '*/zcl.c',
