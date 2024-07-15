@@ -183,9 +183,10 @@ local mappings = {
   },
   d = {
     name = "Diagnostics",
-    ["d"] = { "<cmd>lua vim.diagnostic.hide(nil, 0)<CR>", "Hide"},
-    ["e"] = { "<cmd>lua vim.diagnostic.show(nil, 0)<CR>", "Show"},
     ["q"] = { "<cmd>lua vim.diagnostic.setqflist()<CR>", "as quickfix list"},
+    ["d"] = { "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>", "Toggle" },
+    ["h"] = { "<cmd>lua vim.diagnostic.hide(nil, 0)<CR>", "Hide"},
+    ["s"] = { "<cmd>lua vim.diagnostic.show(nil, 0)<CR>", "Show"},
   },
   c = {
     name = "ChatGPT/Copilot",
