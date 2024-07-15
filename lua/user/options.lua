@@ -60,5 +60,3 @@ vim.api.nvim_set_option_value("colorcolumn", "100", {})
 
 vim.cmd "set whichwrap+=<,>,[,],h,l" -- TODO Do i need this
 vim.cmd [[set iskeyword+=-]] -- TODO Do i need this
-
-

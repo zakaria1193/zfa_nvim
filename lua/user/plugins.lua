@@ -50,7 +50,7 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" })
 
   -- Pretty icons
-	use({ "kyazdani42/nvim-web-devicons" })
+  use 'nvim-tree/nvim-web-devicons'
 
   -- Explorer to replace netrw
   -- Press g? for help
