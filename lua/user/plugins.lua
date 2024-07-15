@@ -75,7 +75,7 @@ return packer.startup(function(use)
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
-  --- Interesting words
+  --- Interesting words (see whichkey ,k)
   use{'lfv89/vim-interestingwords'}
 
   -- Adds good indent to new lines
