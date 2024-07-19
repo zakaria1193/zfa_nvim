@@ -70,12 +70,13 @@ lualine.setup({
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
     globalstatus = true,
+
 	},
 	sections = {
 		lualine_a = { mode },
     -- Fill filename with spaces to make it easier to read
-		lualine_b = { filename, branch },
-		lualine_c = {  dirname, diagnostics },
+		lualine_b = { branch },
+		lualine_c = {  diagnostics },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { filetype, spaces, "encoding" },
 		lualine_y = { location },
@@ -89,7 +90,12 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_y = {dirname},
+    lualine_z = {filename},
+  },
+
 	extensions = {
     "mason"
   },
