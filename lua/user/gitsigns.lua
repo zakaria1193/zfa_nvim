@@ -43,9 +43,6 @@ gitsigns.setup {
     col = 1
 
   },
-  yadm = {
-    enable = false
-  },
   -- Add keybindings [g ]g to move to next/previous diff hunk
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
