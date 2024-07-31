@@ -59,6 +59,9 @@ return packer.startup(function(use)
   -- Front Page
 	use({ "goolord/alpha-nvim" })
 
+  -- Hardtime
+  use { "m4xshen/hardtime.nvim" }
+
   -- Close all buffers but the current one
   use({ "numtostr/BufOnly.nvim", cmd = "BufOnly" })
 

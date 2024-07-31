@@ -18,3 +18,5 @@ require "user.autocommands"
 require "user.gpt"
 require "user.colorizer"
 require "user.vim-gutentags"
+
+require("hardtime").setup()
