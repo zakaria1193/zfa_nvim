@@ -156,22 +156,6 @@ local config = {
  		.. "\n\nRespond exclusively with the snippet that should be prepended before the selection above.",
  	template_command = "{{command}}",
  	-- https://platform.openai.com/docs/guides/speech-to-text/quickstart 
- 	-- Whisper costs $0.006 / minute (rounded to the nearest second) 
- 	-- by eliminating silence and speeding up the tempo of the recording 
- 	-- we can reduce the cost by 50% or more and get the results faster 
- 	-- directory for storing whisper files 
- 	whisper_dir = (os.getenv("TMPDIR") or os.getenv("TEMP") or "/tmp") .. "/gp_whisper",
- 	-- multiplier of RMS level dB for threshold used by sox to detect silence vs speech 
- 	-- decibels are negative, the recording is normalized to -3dB => 
- 	-- increase this number to pick up more (weaker) sounds as possible speech 
- 	-- decrease this number to pick up only louder sounds as possible speech 
- 	-- you can disable silence trimming by setting this a very high number (like 1000.0) 
- 	whisper_silence = "1.75",
- 	-- whisper tempo (1.0 is normal speed) 
- 	whisper_tempo = "1.75",
- 	-- The language of the input audio, in ISO-639-1 format. 
- 	whisper_language = "en",
-
  	-- image generation settings (Removed by Zakaria -- Not needed for now)
 
  	-- example hook functions (see Extend functionality section in the README) 
