@@ -50,7 +50,7 @@ vim.lsp.inlay_hint.enable(false) -- true doesn't work #TODO why ?
 -- LSP hover styling
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover,
-  { border = 'rounded', focusable = false }
+  { border = 'rounded', focusable = true }
 )
 -- See keymaps.lua for hover keymap triggers
 

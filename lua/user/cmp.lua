@@ -85,6 +85,9 @@ cmp.setup {
       return vim_item
     end,
   },
+  sorting = {
+    priority_weight = 2,
+  },
 
   sources = {
     -- Order is important = Order it is shown
