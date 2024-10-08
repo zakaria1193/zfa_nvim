@@ -33,7 +33,7 @@ keymap("n", "<C-PageUp>", ":bprevious<CR>", opts)
 keymap("n", "<leader><space>", ":noh<CR>", opts) -- TODO Move to which key
 
 -- Search for word under cursor on double click
-keymap("n", "<2-leftMouse>", "*", opts)
+keymap("n", "<2-leftMouse>", "*N", opts)
 
 -- Next and previous tag navigation
 keymap("n", "]t", ":tn<CR>", opts)
