@@ -101,7 +101,7 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets" })
 
   -- Vim gutentags (Delayed lazy load)
-  use({ "ludovicchabant/vim-gutentags", event = "VimEnter" })
+  use({ "mgedmin/vim-gutentags", event = "VimEnter", branch= "altpath"})
 
   -- Github Copilot (Delayed lazyload)
   use {
