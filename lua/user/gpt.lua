@@ -11,7 +11,7 @@ local config = {
  	-- openai_api_key = { "bw", "get", "password", "OPENAI_API_KEY" },
  	-- openai_api_key: "sk-...",
  	-- openai_api_key = os.getenv("env_name.."),
- 	openai_api_key = os.getenv("OPENAI_API_KEY"),
+ 	openai_api_key = {"pass", "OPENAI_API_KEY"},
  	-- prefix for all commands 
  	cmd_prefix = "Gp",
  	-- optional curl parameters (for proxy, etc.) 
