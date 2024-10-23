@@ -43,6 +43,10 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
+
+  -- Profiler -- Run :StartupTime --help
+  use ({"dstein64/vim-startuptime"})
+
 	-- Plugin manager
 	use({ "wbthomason/packer.nvim" })
 
