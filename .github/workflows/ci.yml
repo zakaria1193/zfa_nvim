@@ -9,7 +9,7 @@ on:
     branches:
       - main
       - master
-      
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,9 +19,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Neovim
-      uses: rktjmp/setup-neovim@v1
+      uses: rhysd/action-setup-vim@v1
       with:
-        neovim-version: stable
+        neovim: true
+        version: stable
 
     - name: Install dependencies
       run: |
