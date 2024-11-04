@@ -56,6 +56,9 @@ return packer.startup(function(use)
   -- Pretty icons
   use 'nvim-tree/nvim-web-devicons'
 
+  -- Add brackets quotes easily
+  use 'tpope/vim-surround'
+
   -- Explorer to replace netrw
   -- Press g? for help
 	use({ "nvim-tree/nvim-tree.lua" })
