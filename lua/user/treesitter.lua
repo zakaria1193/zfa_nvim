@@ -13,7 +13,7 @@ local max_file_lines = 3000
 configs.setup {
 
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = "all",
+  -- ensure_installed = "all", -- TODO ensure_installed is too slow ! use :TSInstalll all manually
   -- List of parsers to ignore installing (or "all")
   -- Warning /!\:
   -- 'comment' is a very slow parser, treesitter highlighting will be very slow if it installed
