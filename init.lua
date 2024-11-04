@@ -18,9 +18,4 @@ require "user.autocommands"
 require "user.gpt"
 require "user.colorizer"
 require "user.vim-gutentags"
-
-require("hardtime").setup(
-{
-  disable_mouse = false,
-  max_count = 10 -- Only nag if j/k pressed
-})
+require "user.hardtime"
