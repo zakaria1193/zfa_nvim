@@ -63,7 +63,7 @@ return packer.startup(function(use)
   -- Front Page
 	use({ "goolord/alpha-nvim" })
 
-  -- Hardtime
+  -- Hardtime (Disables arrow keys)
   use { "m4xshen/hardtime.nvim" }
 
   -- Close all buffers but the current one
