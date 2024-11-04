@@ -23,7 +23,7 @@ Plugin configurations are separated into their own files.
 ### Reasonable Minimalism
 
 Only the necessary plugins are installed. But this config is still made for modern desktop machines.
-Not minimalist enough for an embedded Linux editor.
+Not minimalist enough for an embedded Linux run, i just use `neovim --clean` personally.
 
 ## Main features
 
@@ -36,26 +36,8 @@ Not minimalist enough for an embedded Linux editor.
 
 ### LSP support
 
-Language Server Protocol support for C/C++, Python, and Lua.
+Language Server Protocol support for C/C++, Rust, Python, and Lua.
 Very good for real time code linting/analysis and completion.
-
-#### C/C++
-
-Uses Clangd as LSP server.
-
-Uses `clang-tidy` for code linting. As long as you have .clang-tidy config file in your project root, it will be used.
-Can check many things, such as if you C++ is modern enough ;)
-
-- [ ] TODO: Add clang-format support
-
-#### Python
-
-Uses Pyright as LSP server.
-
-#### Lua
-
-Uses Sumneko as LSP server.
-I use this doe
 
 ### Remembering keybindings
 
@@ -66,7 +48,6 @@ I use whichkey to show me all the keybindings for the current mode.
 
 - Mainly use `TIG` for git operations
 - Gitsigns for showing git diff in the gutter
-- [ ] Add ]g and [g for navigating git diff hunks
 
 ### File explorer
 
@@ -84,4 +65,4 @@ I use whichkey to show me all the keybindings for the current mode.
 - Copilot (Disabled by default), Enable with `:CopilotEnable` or keymap `<leader>cp`
   (risk of IP leakage, refer to https://copilot.github.com/ for more info)
 - ChatGPT, does not read your code, but can be talked to using prompts.
-  see www.github.com/jackMort/ChatGPT.nvim
+  see https://github.com/Robitx/gp.nvim
