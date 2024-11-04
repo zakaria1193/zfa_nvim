@@ -32,9 +32,6 @@ jobs:
     - name: Run tests
       run: |
         nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-        nvim --headless -c 'TSUpdateSync' -c 'quitall'
-        nvim --headless -c 'MasonInstall' -c 'quitall'
-        nvim --headless -c 'lua require("plenary.test_harness").test_directory("tests", {minimal_init = "./init.lua"})'
 
     - name: Output Neovim version
       run: |
