@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Neovim
+      uses: rktjmp/setup-neovim@v1
+      with:
+        neovim-version: stable
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ripgrep fd-find
+
+    - name: Run tests
+      run: |
+        nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+        nvim --headless -c 'TSUpdateSync' -c 'quitall'
+        nvim --headless -c 'MasonInstall' -c 'quitall'
+        nvim --headless -c 'lua require("plenary.test_harness").test_directory("tests", {minimal_init = "./init.lua"})'
+
+    - name: Output Neovim version
+      run: |
+        nvim --version
