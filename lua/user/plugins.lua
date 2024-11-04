@@ -72,20 +72,21 @@ return packer.startup(function(use)
   -- Close all buffers but the current one
   use({ "numtostr/BufOnly.nvim", cmd = "BufOnly" })
 
-  -- Status bar
+  -- Status bar / buffer line
 	use({ "nvim-lualine/lualine.nvim" })
 
   -- Project manager
 	use({ "ahmedkhalf/project.nvim" })
 
-  -- Commenting tools
-	use({ "numToStr/Comment.nvim" })
+	--  Commenting 
+  --  We use native neovim 10+ commenting, but this is useful for cases
+  --  when languages are embedded in other languages.
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
   --- Interesting words (see whichkey ,k)
   use{'lfv89/vim-interestingwords'}
 
-  -- Adds good indent to new lines
+  -- Adds good indent to new lines, also adds colors to indent levels (highlight feature)
 	use({ "lukas-reineke/indent-blankline.nvim" })
 
   -- Which key, key helper
@@ -93,7 +94,6 @@ return packer.startup(function(use)
 
 	-- Colorschemes
   use { "catppuccin/nvim", as = "catppuccin" }
-
 
 	-- Completion plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
