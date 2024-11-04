@@ -1,38 +1,21 @@
-name: CI
-
+name: Run tests
 on:
+  pull_request: ~
   push:
     branches:
       - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
 
 jobs:
-  test:
+  build:
+    name: Run tests
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        neovim_version: ['nightly', 'stable']
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Neovim
-      uses: rhysd/action-setup-vim@v1
-      with:
-        neovim: true
-        version: stable
-
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y ripgrep fd-find
-
-    - name: Run tests
-      run: |
-        nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
-    - name: Output Neovim version
-      run: |
-        nvim --version
+      - uses: actions/checkout@v4
+      - name: Run tests
+        uses: nvim-neorocks/nvim-busted-action@v1
+        with:
+          nvim_version: ${{ matrix.neovim_version }}
