@@ -10,6 +10,9 @@ This configuration is designed to be used with Neovim 0.5.0 or later.
 
 On my day to day I use Neovim for C/C++, Python, and Lua development.
 
+## Roadmap
+Find here a roadmap of my planned improvements/change. [Table](https://storm-vertebra-e51.notion.site/3fabe28a0f0d408490e3c4dc8775ddc6?v=4e542a5c92f4435791962b846cf5fd9b)
+
 ## Approach
 
 ### Lua first
