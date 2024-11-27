@@ -1,6 +1,7 @@
 <a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/plugin-manager?style=flat" /></a>
+<a href="https://github.com/zakaria1193/zfa_nvim/actions/workflows/ci.yml"><img src="https://github.com/zakaria1193/zfa_nvim/actions/workflows/ci.yml/badge.svg?branch=main&event=push" alt="Build Status, Tested with latest stable neovim build"></a>
 
 Hi ! I'm <a href="https://linkedin.com/in/fadlizakaria">Zakaria Fadli</a>
 
