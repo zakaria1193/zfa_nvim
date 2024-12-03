@@ -55,8 +55,7 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 vim.keymap.set('n', 'H', require('user.lsp.keymaps_helpers').toggle_inlay_hints)
 
 -- GPT New chat
-vim.keymap.set('n', '<F4>', ":GpChatNew<CR>")
-vim.keymap.set('n', '<F5>', ":GpChatToggle<CR>")
+vim.keymap.set('n', '<F12>', ":GpChatToggle<CR>")
 
 ------------------------------------------------------------------------------------------------
 -- Insert --
@@ -86,8 +85,8 @@ end
 keymap("v", "<leader>f", "y<cmd>lua search_yank()<CR>", opts)
 
 -- GPT rewrite https://github.com/Robitx/gp.nvim
-keymap("v", "<F3>", "<cmd>'<,'>GpRewrite<CR>", opts)
-keymap("v", "<F2>", "<cmd>'<,'>GpChatPaste<CR>", opts)
+keymap("v", "<F11>", "<cmd>'<,'>GpRewrite<CR>", opts)
+keymap("v", "<F12>", "<cmd>'<,'>GpChatPaste<CR>", opts)
 
 ------------------------------------------------------------------------------------------------
 -- Visual Block --
