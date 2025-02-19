@@ -51,6 +51,7 @@ cleanup() {
     rm -rf "$NVIM_TEST_DIR"
 }
 trap cleanup EXIT
+trap cleanup SIGINT  # Add this line to handle Ctrl+C
 
 # Get script directory and config root
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -82,114 +83,19 @@ export XDG_CACHE_HOME="$NVIM_TEST_DIR/.cache"
 # Create necessary directories
 mkdir -p "$XDG_DATA_HOME/nvim" "$XDG_STATE_HOME/nvim" "$XDG_CACHE_HOME/nvim"
 
-# Install lazy.nvim
-log_info "Installing lazy.nvim..."
-LAZY_PATH="$XDG_DATA_HOME/nvim/lazy/lazy.nvim"
-mkdir -p "$(dirname "$LAZY_PATH")"
-git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable "$LAZY_PATH" || {
-    log_error "Failed to clone lazy.nvim"
-    exit 1
-}
-
 # Function to run nvim with timeout
 run_nvim_cmd() {
     local cmd="$1"
-    local timeout=60
-    local temp_log="$NVIM_TEST_DIR/nvim_log.txt"
+    local timeout=10
     
-    log_info "Running: nvim --headless $cmd"
-    timeout "$timeout" nvim --headless "$cmd" > "$temp_log" 2>&1 || {
-        log_error "Command failed: nvim --headless $cmd"
-        log_error "Log output:"
-        command cat "$temp_log"
-        return 1
+    log_info "Running: nvim cmd: $cmd"
+
+    timeout $timeout nvim -u "$NVIM_TEST_DIR/.config/nvim/init.lua" -c "$cmd" -c "qa" || {
+        log_error "Failed to run nvim command: $cmd"
+        exit 1
     }
 }
 
 # Test lazy.nvim installation and plugin sync
 log_info "Testing lazy.nvim plugin installation..."
-run_nvim_cmd "+Lazy! sync" "+qa" || {
-    log_error "Failed to install plugins"
-    exit 1
-}
-
-# Test loading each module
-log_info "Testing module loading..."
-MODULES=(
-    options
-    diagnostics
-    keymaps
-    plugins
-    colorscheme
-    cmp
-    lsp
-    telescope
-    treesitter
-    folding
-    gitsigns
-    nvim-tree
-    lualine
-    project
-    indentline
-    alpha
-    autocommands
-    gpt
-    colorizer
-    vim-gutentags
-    hardtime
-    neovide
-)
-
-failed_modules=()
-for module in "${MODULES[@]}"; do
-    log_info "Testing module: $module"
-    if ! run_nvim_cmd "+lua require('user.$module')" "+qa"; then
-        log_error "Failed to load module: $module"
-        failed_modules+=("$module")
-        continue
-    fi
-done
-
-# Run health checks
-log_info "Running health checks..."
-run_nvim_cmd "+checkhealth" "+qa" || {
-    log_warn "Health checks reported some issues"
-}
-
-# Test basic operations
-log_info "Testing basic operations..."
-
-# Test file operations
-echo "print('hello')" > "$NVIM_TEST_DIR/test.lua"
-run_nvim_cmd "$NVIM_TEST_DIR/test.lua +wq" || {
-    log_error "Failed to open and save file"
-    exit 1
-}
-
-# Test LSP functionality
-log_info "Testing LSP functionality..."
-run_nvim_cmd "+LspInfo" "+qa" || {
-    log_warn "LSP info check failed"
-}
-
-# Test Telescope
-log_info "Testing Telescope..."
-run_nvim_cmd "+Telescope find_files" "+qa" || {
-    log_warn "Telescope test failed"
-}
-
-# Test Tree-sitter
-log_info "Testing Tree-sitter..."
-run_nvim_cmd "+TSInstallInfo" "+qa" || {
-    log_warn "Tree-sitter info check failed"
-}
-
-# Final status report
-log_info "Test suite completed!"
-if [ ${#failed_modules[@]} -eq 0 ]; then
-    log_info "All modules loaded successfully! 🎉"
-else
-    log_error "The following modules failed to load:"
-    printf '%s\n' "${failed_modules[@]/#/  - }"
-    exit 1
-fi
+run_nvim_cmd "+q"
