@@ -39,6 +39,7 @@ require "user.lsp.settings.shell"   -- bashls
 require "user.lsp.settings.none_ls" -- null-ls (Special LSP glue for formatting and linting)
 require "user.lsp.settings.robot"
 require "user.lsp.settings.rust"
+require "user.lsp.settings.ada"
 
 -- Disable watchfunc for LSP for CPU usage reasons
 -- see https://github.com/neovim/neovim/issues/23291#issuecomment-1560742827
