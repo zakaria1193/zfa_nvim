@@ -1,3 +1,6 @@
+
+⚠️ Archived repo, not updated since neovim 0.10. i got too lazy to maintain it so i switched to lazyvim. i might come back to my own config when neovim space gets stable
+
 <a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/zakaria1193/zfanvim"><img src="https://dotfyle.com/zakaria1193/zfanvim/badges/plugin-manager?style=flat" /></a>
